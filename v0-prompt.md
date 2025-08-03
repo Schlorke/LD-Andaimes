@@ -21,18 +21,18 @@ A **LD Andaimes** é uma empresa real fundada em 2014 em Porto Alegre/RS, especi
 
 ### Paleta de Cores (HSL Values)
 
-\`\`\`css
-/_ Cores Primárias _/
---primary: 24 88% 45%; /_ #E36A00 - Laranja LD _/
---accent: 30 100% 60%; /_ #FFAA33 - Amarelo destaque _/
---neutral-900: 0 0% 12%; /_ #1F1F1F - Textos escuros _/
---neutral-50: 0 0% 98%; /_ #FAFAFA - Fundo claro _/
+```css
+/* Cores Primárias */
+--primary: 24 88% 45%; /* #E36A00 - Laranja LD */
+--accent: 30 100% 60%; /* #FFAA33 - Amarelo destaque */
+--neutral-900: 0 0% 12%; /* #1F1F1F - Textos escuros */
+--neutral-50: 0 0% 98%; /* #FAFAFA - Fundo claro */
 
-/_ Estados _/
---success: 151 60% 40%; /_ #10B981 - Verde sucesso _/
---warning: 45 100% 50%; /_ #F59E0B - Amarelo alerta _/
---danger: 0 75% 50%; /_ #EF4444 - Vermelho erro _/
-\`\`\`
+/* Estados */
+--success: 151 60% 40%; /* #10B981 - Verde sucesso */
+--warning: 45 100% 50%; /* #F59E0B - Amarelo alerta */
+--danger: 0 75% 50%; /* #EF4444 - Vermelho erro */
+```
 
 ### Tipografia
 
@@ -60,14 +60,14 @@ Usar SEMPRE os componentes do shadcn/ui como base:
 
 ### Estrutura de Componentes
 
-\`\`\`text
+```text
 /components
-/ui # shadcn/ui base components
-/custom # LD Andaimes specific components
-/sections # Page sections (Hero, Products, About)
-/forms # Contact forms, quote forms
-/layout # Header, Footer, Navigation
-\`\`\`
+  /ui            # shadcn/ui base components
+  /custom        # LD Andaimes specific components
+    /sections    # Page sections (Hero, Products, About)
+    /forms       # Contact forms, quote forms
+    /layout      # Header, Footer, Navigation
+```
 
 ## 🚀 Fases do Projeto
 
@@ -133,7 +133,7 @@ Criar uma landing page moderna e profissional com:
 
 ### Nomenclatura
 
-\`\`\`typescript
+```typescript
 // Componentes
 export function HeroSection() {}
 export function ProductCard() {}
@@ -141,35 +141,35 @@ export function ContactForm() {}
 
 // Props interface
 interface HeroSectionProps {
-title: string;
-description: string;
-ctaText?: string;
+  title: string;
+  description: string;
+  ctaText?: string;
 }
 
 // CSS Classes
 className = 'hero-section';
 className = 'product-card';
 className = 'contact-form';
-\`\`\`
+```
 
 ### Estrutura de Componente
 
-\`\`\`typescript
+```typescript
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
 interface ComponentProps {
-// Props definition
+  // Props definition
 }
 
 export function Component({ prop }: ComponentProps) {
-return (
-<section className="component-section">
-{/_ Component JSX _/}
-</section>
-);
+  return (
+    <section className="component-section">
+      {/* Component JSX */}
+    </section>
+  );
 }
-\`\`\`
+```
 
 ## 🎯 Exemplos de Prompts Específicos
 

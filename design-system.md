@@ -6,20 +6,16 @@ Sistema de design para a plataforma de locação/venda de andaimes e escoramento
 
 O design system está completamente documentado no **Storybook 9.1.0**:
 
-\`\`\`bash
-
+```bash
 # Executar Storybook local
-
 pnpm storybook
-
 # Abre http://localhost:6006
 
 # Build estático do Storybook
-
 pnpm build-storybook
-\`\`\`
+```
 
-### Stories Disponíveis
+## Stories Disponíveis
 
 - **LD Andaimes/Button** - Sistema de botões com 5 variantes
 - **LD Andaimes/Hero** - Componente hero com 5 configurações
@@ -31,29 +27,29 @@ pnpm build-storybook
 
 #### Cores
 
-\`\`\`css
-/_ Primary - Laranja LD Andaimes _/
+```css
+/* Primary - Laranja LD Andaimes */
 --ld-orange-50: #fff7ed;
 --ld-orange-100: #ffedd5;
 --ld-orange-200: #fed7aa;
 --ld-orange-300: #fdba74;
 --ld-orange-400: #fb923c;
---ld-orange-500: #e36a00; /_ Primary _/
+--ld-orange-500: #e36a00; /* Primary */
 --ld-orange-600: #ea580c;
 --ld-orange-700: #c2410c;
 --ld-orange-800: #9a3412;
 --ld-orange-900: #7c2d12;
 
-/_ Accent - Amarelo Construção _/
+/* Accent - Amarelo Construção */
 --ld-yellow-50: #fffbeb;
 --ld-yellow-100: #fef3c7;
 --ld-yellow-200: #fde68a;
 --ld-yellow-300: #fcd34d;
---ld-yellow-400: #ffaa33; /_ Accent _/
+--ld-yellow-400: #ffaa33; /* Accent */
 --ld-yellow-500: #f59e0b;
 --ld-yellow-600: #d97706;
 
-/_ Neutros - Concreto _/
+/* Neutros - Concreto */
 --ld-gray-50: #f9fafb;
 --ld-gray-100: #f3f4f6;
 --ld-gray-200: #e5e7eb;
