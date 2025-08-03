@@ -1,7 +1,7 @@
-"use client"
+'use client';
 
-import  from "../src/components/ui/card"
+import { Card } from '../src/components/ui/card';
 
 export default function SyntheticV0PageForDeployment() {
-  return < />
+  return <Card />;
 }

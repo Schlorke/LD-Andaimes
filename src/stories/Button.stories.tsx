@@ -1,72 +1,72 @@
-import type { Meta, StoryObj } from "@storybook/react"
-import { Button } from "@/components/ui/button"
-import { Download, ArrowRight, Phone } from "lucide-react"
+import type { Meta, StoryObj } from '@storybook/nextjs';
+import { Button } from '@/components/ui/button';
+import { Download, ArrowRight, Phone } from 'lucide-react';
 
 const meta: Meta<typeof Button> = {
-  title: "LD Andaimes/Button",
+  title: 'LD Andaimes/Button',
   component: Button,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
     variant: {
-      control: "select",
-      options: ["primary", "secondary", "accent", "ghost", "destructive"],
+      control: 'select',
+      options: ['primary', 'secondary', 'accent', 'ghost', 'destructive'],
     },
     size: {
-      control: "select",
-      options: ["sm", "md", "lg", "xl"],
+      control: 'select',
+      options: ['sm', 'md', 'lg', 'xl'],
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
     },
   },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: "Solicitar Orçamento",
-    variant: "primary",
+    children: 'Solicitar Orçamento',
+    variant: 'primary',
   },
-}
+};
 
 export const Secondary: Story = {
   args: {
-    children: "Ver Catálogo",
-    variant: "secondary",
+    children: 'Ver Catálogo',
+    variant: 'secondary',
   },
-}
+};
 
 export const Accent: Story = {
   args: {
-    children: "Destaque",
-    variant: "accent",
+    children: 'Destaque',
+    variant: 'accent',
   },
-}
+};
 
 export const WithIcon: Story = {
   args: {
     children: (
       <>
-        <Download className="w-4 h-4" />
+        <Download className="h-4 w-4" />
         Download Catálogo
       </>
     ),
-    variant: "primary",
+    variant: 'primary',
   },
-}
+};
 
 export const Loading: Story = {
   args: {
-    children: "Carregando...",
+    children: 'Carregando...',
     disabled: true,
-    variant: "primary",
+    variant: 'primary',
   },
-}
+};
 
 export const Sizes: Story = {
   render: () => (
@@ -77,7 +77,7 @@ export const Sizes: Story = {
       <Button size="xl">Extra Grande</Button>
     </div>
   ),
-}
+};
 
 export const Variants: Story = {
   render: () => (
@@ -89,19 +89,19 @@ export const Variants: Story = {
       <Button variant="destructive">Destructive</Button>
     </div>
   ),
-}
+};
 
 export const CTAButtons: Story = {
   render: () => (
-    <div className="flex flex-col gap-4 items-center">
+    <div className="flex flex-col items-center gap-4">
       <Button variant="primary" size="lg">
-        <Phone className="w-5 h-5" />
+        <Phone className="h-5 w-5" />
         Fale Conosco
       </Button>
       <Button variant="secondary" size="lg">
         Ver Produtos
-        <ArrowRight className="w-5 h-5" />
+        <ArrowRight className="h-5 w-5" />
       </Button>
     </div>
   ),
-}
+};
