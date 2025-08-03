@@ -103,7 +103,7 @@
 
 ### Estrutura de Arquivos
 
-```text
+\`\`\`text
 src/
 ├── app/                   # Next.js App Router
 │   ├── globals.css        # Estilos Tailwind v4
@@ -120,7 +120,7 @@ src/
     ├── Button.stories.tsx
     ├── Hero.stories.tsx
     └── LandingPage.stories.tsx
-```
+\`\`\`
 
 ### Convenções de Nomenclatura
 
@@ -131,11 +131,11 @@ src/
 
 ### Variantes de Componentes
 
-```typescript
+\`\`\`typescript
 // Button variants alinhadas ao design system
 variant: 'primary' | 'secondary' | 'accent' | 'ghost' | 'destructive';
 size: 'sm' | 'md' | 'lg' | 'xl';
-```
+\`\`\`
 
 ## 8. Tecnologias Avançadas & Padrões Mundiais
 
@@ -239,7 +239,7 @@ size: 'sm' | 'md' | 'lg' | 'xl';
 
 ### Checklist "Antes de Commitar"
 
-```bash
+\`\`\`bash
 # 1. Lint & Format
 pnpm run lint              # ESLint check
 pnpm run lint:fix          # Auto-fix issues
@@ -258,7 +258,7 @@ pnpm run build-storybook   # Storybook build
 
 # 5. Visual Review
 pnpm run storybook         # Review components
-```
+\`\`\`
 
 ## 10. Fluxo Multi-IA
 
@@ -349,7 +349,7 @@ pnpm run storybook         # Review components
 
 ## 13. Scripts Úteis
 
-```bash
+\`\`\`bash
 # Desenvolvimento
 pnpm dev                   # Next.js dev server
 pnpm dev:storybook        # Storybook dev
@@ -374,7 +374,7 @@ pnpm test:coverage        # Coverage report
 # Storybook
 pnpm storybook            # Development
 pnpm build-storybook      # Build for production
-```
+\`\`\`
 
 ---
 

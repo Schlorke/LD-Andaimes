@@ -1,221 +1,148 @@
-'use client';
+"use client"
 
-import type React from 'react';
+import type React from "react"
 
-import {
-  Building2,
-  Wrench,
-  Shield,
-  Truck,
-  HardHat,
-  StepBackIcon as Stairs,
-} from 'lucide-react';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useInView } from "framer-motion"
+import { useRef } from "react"
+import Image from "next/image"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, Shield, Wrench, Clock } from "lucide-react"
 
 const products = [
   {
-    id: 'fachadeiros',
-    title: 'Andaimes Fachadeiros',
-    description:
-      'Estruturas metálicas para reformas e pinturas de fachadas com segurança e mobilidade.',
-    icon: Building2,
-    features: [
-      'Reformas externas',
-      'Instalação de revestimentos',
-      'Manutenção de fachadas',
-    ],
-    badge: 'Mais Popular',
-  },
-  {
-    id: 'torres',
-    title: 'Torres de Serviço',
-    description:
-      'Andaimes modulares com rodízios para trabalhos pontuais em altura.',
-    icon: Wrench,
-    features: [
-      'Trabalhos internos/externos',
-      'Manutenção elétrica',
-      'Acesso pontual',
-    ],
-    badge: null,
-  },
-  {
-    id: 'escoras',
-    title: 'Escoras Metálicas',
-    description:
-      'Equipamentos de aço para sustentação temporária com altura ajustável.',
+    id: 1,
+    name: "Andaimes Fachadeiros",
+    description: "Sistema modular completo para trabalhos em fachadas, garantindo máxima segurança e produtividade.",
+    image: "/images/andaime-fachadeiro.jpg",
+    features: ["Montagem rápida", "Alta resistência", "Certificado"],
     icon: Shield,
-    features: ['Apoio de fôrmas', 'Sustentação estrutural', 'Alta resistência'],
-    badge: null,
   },
   {
-    id: 'chapas',
-    title: 'Chapas Tapa Vala',
-    description: 'Placas metálicas para cobertura de valas em obras urbanas.',
-    icon: Truck,
-    features: [
-      'Proteção de trabalhadores',
-      'Evita acidentes',
-      'Suporta veículos',
-    ],
-    badge: null,
+    id: 2,
+    name: "Torres de Serviço",
+    description: "Torres móveis ideais para manutenção e serviços em altura, com fácil movimentação.",
+    image: "/images/torre-servico.jpg",
+    features: ["Mobilidade", "Estabilidade", "Versatilidade"],
+    icon: Wrench,
   },
   {
-    id: 'bandejas',
-    title: 'Bandejas de Proteção',
-    description:
-      'Acessórios de segurança para extremidades dos pavimentos do andaime.',
-    icon: HardHat,
-    features: [
-      'Contém queda de materiais',
-      'Protege pedestres',
-      'Organiza espaço',
-    ],
-    badge: 'Obrigatório',
+    id: 3,
+    name: "Escoras Metálicas",
+    description: "Suporte estrutural robusto para lajes e vigas, garantindo segurança durante a construção.",
+    image: "/placeholder.svg?height=300&width=400",
+    features: ["Suporte robusto", "Ajuste preciso", "Durabilidade"],
+    icon: Clock,
   },
-  {
-    id: 'escadas',
-    title: 'Escadas para Andaime',
-    description: 'Acessórios para acesso seguro entre níveis do andaime.',
-    icon: Stairs,
-    features: ['Acesso seguro', 'Facilita trabalho', 'Item essencial'],
-    badge: null,
-  },
-];
+]
 
-function ScrollReveal({
-  children,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-}) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+function ScrollReveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-50px" })
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
-  );
+  )
 }
 
-interface ProductsSectionProps {
-  className?: string;
-}
-
-export function ProductsSection({ className }: ProductsSectionProps) {
+export function ProductsSection() {
   return (
-    <section id="produtos" className={`bg-white py-16 ${className}`}>
-      <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
+    <section id="produtos" className="py-32 relative wave-divider">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="text-center mb-16">
           <ScrollReveal>
             <Badge
               variant="secondary"
-              className="mb-4 bg-orange-100 text-orange-800"
+              className="mb-6 bg-gradient-to-r from-primary-100 to-accent-100 px-4 py-2 text-sm font-semibold text-primary-800"
             >
               Nossos Produtos
             </Badge>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <h2 className="font-display mb-4 text-4xl font-bold tracking-tight text-gray-900">
-              Soluções Completas em Andaimes
+            <h2 className="font-display text-5xl font-bold tracking-tight mb-6 text-gray-900">
+              Soluções completas para sua obra
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.4}>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              Equipamentos certificados e normatizados para máxima segurança em
-              obras de todos os tamanhos
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Equipamentos certificados e de alta qualidade para garantir a segurança e eficiência do seu projeto.
             </p>
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => {
-            const Icon = product.icon;
+            const Icon = product.icon
             return (
-              <ScrollReveal key={product.id} delay={index * 0.1}>
-                <Card className="group relative flex h-full transform flex-col transition-all duration-500 hover:scale-[1.02] hover:shadow-xl">
-                  {product.badge && (
-                    <Badge
-                      variant={
-                        product.badge === 'Mais Popular' ? 'default' : 'warning'
-                      }
-                      className="absolute -top-2 -right-2 z-10 bg-orange-500 text-white"
-                    >
-                      {product.badge}
-                    </Badge>
-                  )}
-
-                  <CardHeader>
-                    <div className="flex items-center space-x-3">
-                      <div className="rounded-lg bg-orange-100 p-3 transition-colors group-hover:bg-orange-200">
-                        <Icon className="h-6 w-6 text-orange-600" />
+              <ScrollReveal key={product.id} delay={index * 0.2}>
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <Card className="group overflow-hidden bg-white/80 backdrop-blur-sm shadow-card-3d hover:shadow-card-3d-hover transition-all duration-300 border-0">
+                    <div className="relative h-64 overflow-hidden">
+                      <Image
+                        src={product.image || "/placeholder.svg"}
+                        alt={product.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute top-4 left-4">
+                        <div className="bg-primary-500 p-2 rounded-lg shadow-3d">
+                          <Icon className="h-6 w-6 text-white" />
+                        </div>
                       </div>
-                      <CardTitle className="text-xl text-gray-900">
-                        {product.title}
-                      </CardTitle>
                     </div>
-                    <CardDescription className="text-base text-gray-600">
-                      {product.description}
-                    </CardDescription>
-                  </CardHeader>
-
-                  <CardContent className="flex flex-grow flex-col justify-between">
-                    <ul className="mb-6 space-y-2">
-                      {product.features.map((feature, i) => (
-                        <li
-                          key={i}
-                          className="flex items-center text-sm text-gray-600"
-                        >
-                          <div className="mr-3 h-2 w-2 rounded-full bg-orange-500" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-
-                    <Button
-                      variant="outline"
-                      className="mt-auto w-full bg-transparent transition-all duration-300 group-hover:border-orange-500 group-hover:bg-orange-500 group-hover:text-white"
-                      asChild
-                    >
-                      <a href="https://wa.me/5551994647458?text=Olá! Gostaria de uma cotação para andaimes.">
-                        Solicitar Cotação
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
+                    <CardContent className="p-6">
+                      <h3 className="font-display text-xl font-bold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors duration-300">
+                        {product.name}
+                      </h3>
+                      <p className="text-gray-600 mb-4 leading-relaxed">{product.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {product.features.map((feature) => (
+                          <Badge
+                            key={feature}
+                            variant="secondary"
+                            className="bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors duration-300"
+                          >
+                            {feature}
+                          </Badge>
+                        ))}
+                      </div>
+                      <Button
+                        variant="outline"
+                        className="w-full group-hover:bg-primary-500 group-hover:text-white group-hover:border-primary-500 transition-all duration-300 bg-transparent"
+                      >
+                        Saiba mais
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               </ScrollReveal>
-            );
+            )
           })}
         </div>
 
-        <ScrollReveal delay={0.6}>
-          <div className="mt-12 text-center">
-            <Button
-              size="lg"
-              className="bg-orange-500 text-white hover:bg-orange-600"
-            >
-              Ver Catálogo Completo
+        <ScrollReveal delay={0.8}>
+          <div className="text-center mt-12">
+            <Button size="lg">
+              Ver todos os produtos
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </ScrollReveal>
       </div>
     </section>
-  );
+  )
 }

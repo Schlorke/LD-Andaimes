@@ -6,14 +6,14 @@ Sistema de design para a plataforma de locação/venda de andaimes e escoramento
 
 O design system está completamente documentado no **Storybook 9.1.0**:
 
-```bash
+\`\`\`bash
 # Executar Storybook local
 pnpm storybook
 # Abre http://localhost:6006
 
 # Build estático do Storybook
 pnpm build-storybook
-```
+\`\`\`
 
 ## Stories Disponíveis
 
@@ -27,7 +27,7 @@ pnpm build-storybook
 
 #### Cores
 
-```css
+\`\`\`css
 /* Primary - Laranja LD Andaimes */
 --ld-orange-50: #fff7ed;
 --ld-orange-100: #ffedd5;
