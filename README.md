@@ -24,11 +24,11 @@ Foco em **performance, acessibilidade AA+** e design system consistente.
 | Design System | Storybook 8 + Tokens (CSS vars) |
 
 ## 🛠️ Rodando localmente
-```bash
+\`\`\`bash
 pnpm install
 pnpm dev
 # abre http://localhost:3000
-```
+\`\`\`
 
 ## 📑 Roteiro
 - [x] Configurar repositório & CI  
