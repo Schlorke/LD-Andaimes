@@ -6,7 +6,7 @@ Este guia explica como usar e contribuir com o Storybook do projeto LD Andaimes.
 
 ### Executar Storybook Local
 
-\`\`\`bash
+```bash
 # Instalar dependências
 pnpm install
 
@@ -15,7 +15,7 @@ pnpm storybook
 
 # Build estático (para deploy)
 pnpm build-storybook
-\`\`\`
+```
 
 ### Acessar o Storybook
 
@@ -28,7 +28,7 @@ pnpm build-storybook
 
 O projeto agora utiliza uma estrutura unificada em `src/` que elimina conflitos e duplicações:
 
-\`\`\`text
+```text
 src/
 ├── app/                   # Next.js App Router
 │   ├── globals.css        # Estilos Tailwind v4
@@ -46,7 +46,7 @@ src/
     ├── Hero.stories.tsx
     ├── LandingPage.stories.tsx
     └── Configure.mdx
-\`\`\`
+```
 
 **Imports**: Todos os componentes são importados via `@/components/ui/` que resolve para `src/components/ui/`.
 
@@ -54,14 +54,14 @@ src/
 
 ### Organização Atual
 
-\`\`\`text
+```text
 src/stories/
 ├── Button.stories.tsx         # Componente Button com 5 variantes
 ├── Hero.stories.tsx          # Componente Hero com múltiplas configurações
 ├── LandingPage.stories.tsx   # Página completa com seções
 ├── Page.stories.ts           # Exemplos de página (template)
 └── Header.stories.ts         # Header component (template)
-\`\`\`
+```
 
 ### Padrão de Nomenclatura
 
@@ -75,7 +75,7 @@ src/stories/
 
 ### Template Base
 
-\`\`\`tsx
+```tsx
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import { MeuComponente } from '@/components/ui/meu-componente';
 
@@ -119,13 +119,13 @@ export const Secondary: Story = {
     children: 'Exemplo Secundário',
   },
 };
-\`\`\`
+```
 
 ### Para Componentes com React Elements
 
 Quando o componente aceita React elements como props, use `render`:
 
-\`\`\`tsx
+```tsx
 export const ComElementos: Story = {
   render: args => (
     <MeuComponente
@@ -134,7 +134,7 @@ export const ComElementos: Story = {
     />
   ),
 };
-\`\`\`
+```
 
 ## ⚙️ Configurações Especiais
 
@@ -144,7 +144,7 @@ O projeto tem filtros configurados para prevenir erros com propriedades React:
 
 **No `.storybook/main.ts`:**
 
-\`\`\`ts
+```ts
 typescript: {
   reactDocgen: 'react-docgen-typescript',
   reactDocgenTypescriptOptions: {
@@ -154,14 +154,14 @@ typescript: {
     },
   },
 },
-\`\`\`
+```
 
 **No `.storybook/preview.ts`:**
 
-\`\`\`ts
+```ts
 // Decorator para filtrar símbolos
 export const decorators = [withSafeProps];
-\`\`\`
+```
 
 ### Controles Desabilitados
 
@@ -171,14 +171,14 @@ Para evitar erros, desabilite controles para:
 - Callbacks/functions
 - Refs e propriedades internas do React
 
-\`\`\`tsx
+```tsx
 argTypes: {
   primaryAction: { table: { disable: true } },
   secondaryAction: { table: { disable: true } },
   onClick: { table: { disable: true } },
   className: { table: { disable: true } },
 }
-\`\`\`
+```
 
 ## 📱 Testing Responsivo
 
@@ -186,13 +186,13 @@ argTypes: {
 
 As stories de página incluem configurações de viewport:
 
-\`\`\`tsx
+```tsx
 export const Mobile: Story = {
   parameters: {
     viewport: { defaultViewport: 'mobile' },
   },
 };
-\`\`\`
+```
 
 ### Viewports Disponíveis
 
@@ -214,7 +214,7 @@ Siga a hierarquia:
 
 Use dados que representem casos reais:
 
-\`\`\`tsx
+```tsx
 export const Realistic: Story = {
   args: {
     title: 'LD Andaimes - Soluções Completas',
@@ -222,13 +222,13 @@ export const Realistic: Story = {
       'Andaimes, escoramentos e acessórios para construção civil com mais de 20 anos de experiência.',
   },
 };
-\`\`\`
+```
 
 ### 3. Documentação Rica
 
 Inclua descrições detalhadas:
 
-\`\`\`tsx
+```tsx
 parameters: {
   docs: {
     description: {
@@ -236,7 +236,7 @@ parameters: {
     },
   },
 },
-\`\`\`
+```
 
 ### 4. Acessibilidade
 
@@ -252,7 +252,7 @@ Teste com o addon de acessibilidade habilitado:
 
 **Solução**: Usar `render` functions em vez de `args` para propriedades React:
 
-\`\`\`tsx
+```tsx
 // ❌ Evitar
 export const Wrong: Story = {
   args: {
@@ -264,31 +264,31 @@ export const Wrong: Story = {
 export const Right: Story = {
   render: args => <Component {...args} action={<Button>Click</Button>} />,
 };
-\`\`\`
+```
 
 ### Erro "missing default export"
 
 **Solução**: Verificar se o `export default meta` está presente:
 
-\`\`\`tsx
+```tsx
 const meta: Meta<typeof Component> = {
   /* config */
 };
 export default meta; // ← Essencial
-\`\`\`
+```
 
 ### Hot Reload Problemas
 
 **Solução**: Limpar cache e reiniciar:
 
-\`\`\`bash
+```bash
 # Parar Storybook
 # Limpar cache
 rm -rf .next storybook-static node_modules/.cache
 
 # Reiniciar
 pnpm storybook
-\`\`\`
+```
 
 ## 📖 Recursos Adicionais
 

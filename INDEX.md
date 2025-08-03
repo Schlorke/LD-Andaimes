@@ -61,7 +61,7 @@ Guia completo para navegar pela documentação do projeto LD Andaimes.
 
 ## 🗂️ Estrutura de Arquivos
 
-\`\`\`text
+```text
 LD-Andaimes/
 ├── 📄 Documentação
 │   ├── README.md           # Visão geral e setup
@@ -93,40 +93,40 @@ LD-Andaimes/
     ├── .nvmrc             # Versão Node.js
     ├── vercel.json        # Config Vercel
     └── .storybook/        # Configuração Storybook
-\`\`\`
+```
 
 ## 🚀 Quick Start
 
 ### 1. Setup Inicial
 
-\`\`\`bash
+```bash
 # Clonar repositório
 git clone https://github.com/Schlorke/LD-Andaimes.git
 cd LD-Andaimes
 
 # Instalar dependências
 pnpm install
-\`\`\`
+```
 
 ### 2. Desenvolvimento
 
-\`\`\`bash
+```bash
 # Servidor Next.js (localhost:3000)
 pnpm dev
 
 # Storybook (localhost:6006)
 pnpm storybook
-\`\`\`
+```
 
 ### 3. Build & Deploy
 
-\`\`\`bash
+```bash
 # Build de produção
 pnpm build
 
 # Build do Storybook
 pnpm build-storybook
-\`\`\`
+```
 
 ## 📚 Recursos de Aprendizado
 

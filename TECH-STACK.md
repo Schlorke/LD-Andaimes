@@ -87,7 +87,7 @@
 
 **Removidos para compatibilidade com Vercel:**
 
-\`\`\`json
+```json
 // Anteriormente causavam conflito no lockfile
 {
   "pnpm": {
@@ -97,7 +97,7 @@
     }
   }
 }
-\`\`\`
+```
 
 ### Deploy & CI/CD
 
@@ -176,7 +176,7 @@
 
 ## 🔍 Scripts de Manutenção
 
-\`\`\`bash
+```bash
 # Verificar dependências desatualizadas
 pnpm outdated
 
@@ -192,4 +192,4 @@ pnpm dedupe
 # Limpar cache
 rm -rf node_modules/.pnpm-store
 pnpm install
-\`\`\`
+```

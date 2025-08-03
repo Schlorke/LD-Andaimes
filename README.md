@@ -37,7 +37,7 @@ Foco em **performance, acessibilidade AA+** e design system consistente com comp
 
 ### Setup Local
 
-\`\`\`bash
+```bash
 # Instalar dependências
 pnpm install
 
@@ -58,7 +58,7 @@ pnpm lint          # ESLint
 pnpm lint:fix      # ESLint com correções automáticas
 pnpm format        # Prettier
 pnpm format:check  # Verificar formatação
-\`\`\`
+```
 
 ### Scripts Disponíveis
 
@@ -93,7 +93,7 @@ O projeto segue as melhores práticas de desenvolvimento orientado a componentes
 
 ### Estrutura de Componentes
 
-\`\`\`text
+```text
 src/
 ├── app/
 │   ├── globals.css        # Estilos globais Tailwind v4
@@ -111,7 +111,7 @@ src/
     ├── Hero.stories.tsx
     ├── LandingPage.stories.tsx
     └── Configure.mdx
-\`\`\`
+```
 
 ## 📑 Roteiro Atualizado
 
