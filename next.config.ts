@@ -1,14 +1,14 @@
-import type { NextConfig } from "next"
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   // Enable experimental features
   experimental: {
-    optimizePackageImports: ["lucide-react", "@radix-ui/react-icons"],
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
 
   // Image optimization
   images: {
-    formats: ["image/avif", "image/webp"],
+    formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     unoptimized: true,
@@ -18,25 +18,25 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/manifest.json",
+        source: '/manifest.json',
         headers: [
           {
-            key: "Content-Type",
-            value: "application/manifest+json",
+            key: 'Content-Type',
+            value: 'application/manifest+json',
           },
         ],
       },
-    ]
+    ];
   },
 
   // Security headers
   async rewrites() {
     return [
       {
-        source: "/sw.js",
-        destination: "/_next/static/sw.js",
+        source: '/sw.js',
+        destination: '/_next/static/sw.js',
       },
-    ]
+    ];
   },
 
   // ESLint configuration
@@ -48,6 +48,6 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;

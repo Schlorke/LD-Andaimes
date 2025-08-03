@@ -8,7 +8,7 @@ export const motionTokens = {
     slow: 0.8,
   },
   easing: [0.22, 1, 0.36, 1],
-} as const
+} as const;
 
 /**
  * Variants for Framer Motion animations.
@@ -46,4 +46,4 @@ export const motionVariants = {
       },
     },
   },
-} as const
+} as const;

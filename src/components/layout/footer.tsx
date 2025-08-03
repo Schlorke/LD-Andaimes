@@ -1,48 +1,55 @@
-import Link from "next/link"
-import { Phone, Mail, MapPin, Instagram } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Link from 'next/link';
+import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const footerLinks = {
   produtos: [
-    { name: "Andaimes Fachadeiros", href: "/produtos/fachadeiros" },
-    { name: "Torres de Serviço", href: "/produtos/torres" },
-    { name: "Escoras Metálicas", href: "/produtos/escoras" },
-    { name: "Chapas Tapa Vala", href: "/produtos/chapas" },
+    { name: 'Andaimes Fachadeiros', href: '/produtos/fachadeiros' },
+    { name: 'Torres de Serviço', href: '/produtos/torres' },
+    { name: 'Escoras Metálicas', href: '/produtos/escoras' },
+    { name: 'Chapas Tapa Vala', href: '/produtos/chapas' },
   ],
   empresa: [
-    { name: "Sobre Nós", href: "/sobre" },
-    { name: "Nossa História", href: "/historia" },
-    { name: "Qualidade", href: "/qualidade" },
-    { name: "Segurança", href: "/seguranca" },
+    { name: 'Sobre Nós', href: '/sobre' },
+    { name: 'Nossa História', href: '/historia' },
+    { name: 'Qualidade', href: '/qualidade' },
+    { name: 'Segurança', href: '/seguranca' },
   ],
   suporte: [
-    { name: "Contato", href: "/contato" },
-    { name: "Orçamentos", href: "/orcamento" },
-    { name: "FAQ", href: "/faq" },
-    { name: "Suporte Técnico", href: "/suporte" },
+    { name: 'Contato', href: '/contato' },
+    { name: 'Orçamentos', href: '/orcamento' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Suporte Técnico', href: '/suporte' },
   ],
-}
+};
 
 export function Footer() {
   return (
     <footer className="bg-neutral-900 text-neutral-100">
       <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded bg-primary flex items-center justify-center">
-                <span className="text-white font-bold text-sm">LD</span>
+              <div className="bg-primary flex h-8 w-8 items-center justify-center rounded">
+                <span className="text-sm font-bold text-white">LD</span>
               </div>
-              <span className="font-display font-bold text-xl">LD Andaimes</span>
+              <span className="font-display text-xl font-bold">
+                LD Andaimes
+              </span>
             </div>
-            <p className="text-neutral-300 text-sm leading-relaxed">
-              Soluções completas em andaimes e escoramentos para construção civil. Mais de 10 anos de experiência
-              garantindo segurança e qualidade.
+            <p className="text-sm leading-relaxed text-neutral-300">
+              Soluções completas em andaimes e escoramentos para construção
+              civil. Mais de 10 anos de experiência garantindo segurança e
+              qualidade.
             </p>
             <div className="flex space-x-2">
               <Button variant="ghost" size="sm" asChild>
-                <a href="https://instagram.com/ldandaimes" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://instagram.com/ldandaimes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Instagram className="h-4 w-4" />
                 </a>
               </Button>
@@ -51,11 +58,16 @@ export function Footer() {
 
           {/* Products */}
           <div>
-            <h3 className="font-display font-semibold text-lg mb-4">Produtos</h3>
+            <h3 className="font-display mb-4 text-lg font-semibold">
+              Produtos
+            </h3>
             <ul className="space-y-2">
-              {footerLinks.produtos.map((link) => (
+              {footerLinks.produtos.map(link => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-neutral-300 hover:text-primary transition-colors text-sm">
+                  <Link
+                    href={link.href}
+                    className="hover:text-primary text-sm text-neutral-300 transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -65,11 +77,14 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-display font-semibold text-lg mb-4">Empresa</h3>
+            <h3 className="font-display mb-4 text-lg font-semibold">Empresa</h3>
             <ul className="space-y-2">
-              {footerLinks.empresa.map((link) => (
+              {footerLinks.empresa.map(link => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-neutral-300 hover:text-primary transition-colors text-sm">
+                  <Link
+                    href={link.href}
+                    className="hover:text-primary text-sm text-neutral-300 transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -79,26 +94,26 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-display font-semibold text-lg mb-4">Contato</h3>
+            <h3 className="font-display mb-4 text-lg font-semibold">Contato</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <Phone className="h-4 w-4 mt-0.5 text-primary" />
+                <Phone className="text-primary mt-0.5 h-4 w-4" />
                 <div className="text-sm">
                   <p className="text-neutral-300">(51) 3276-3836</p>
                   <p className="text-neutral-300">(51) 3276-1982</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <Mail className="h-4 w-4 mt-0.5 text-primary" />
+                <Mail className="text-primary mt-0.5 h-4 w-4" />
                 <a
                   href="mailto:comercial@ldandaimes.com.br"
-                  className="text-sm text-neutral-300 hover:text-primary transition-colors"
+                  className="hover:text-primary text-sm text-neutral-300 transition-colors"
                 >
                   comercial@ldandaimes.com.br
                 </a>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPin className="h-4 w-4 mt-0.5 text-primary" />
+                <MapPin className="text-primary mt-0.5 h-4 w-4" />
                 <p className="text-sm text-neutral-300">
                   Rua Sr. do Bom Fim, 540
                   <br />
@@ -109,18 +124,26 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-neutral-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-neutral-400 text-sm">© 2025 LD Andaimes. Todos os direitos reservados.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacidade" className="text-neutral-400 hover:text-primary text-sm transition-colors">
+        <div className="mt-8 flex flex-col items-center justify-between border-t border-neutral-800 pt-8 md:flex-row">
+          <p className="text-sm text-neutral-400">
+            © 2025 LD Andaimes. Todos os direitos reservados.
+          </p>
+          <div className="mt-4 flex space-x-6 md:mt-0">
+            <Link
+              href="/privacidade"
+              className="hover:text-primary text-sm text-neutral-400 transition-colors"
+            >
               Privacidade
             </Link>
-            <Link href="/termos" className="text-neutral-400 hover:text-primary text-sm transition-colors">
+            <Link
+              href="/termos"
+              className="hover:text-primary text-sm text-neutral-400 transition-colors"
+            >
               Termos
             </Link>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

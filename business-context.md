@@ -231,6 +231,7 @@ Compromisso de elevar os clientes com ampla linha de equipamentos normatizados, 
 ### Meta Tags Essenciais
 
 \`\`\`html
+
 <title>LD Andaimes - Locação e Venda de Andaimes em Porto Alegre</title>
 <meta
   name="description"
