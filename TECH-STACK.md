@@ -90,12 +90,12 @@
 \`\`\`json
 // Anteriormente causavam conflito no lockfile
 {
-  "pnpm": {
-    "overrides": {
-      "glob": "^11.0.0",
-      "rimraf": "^6.0.0"
-    }
-  }
+"pnpm": {
+"overrides": {
+"glob": "^11.0.0",
+"rimraf": "^6.0.0"
+}
+}
 }
 \`\`\`
 
@@ -177,19 +177,25 @@
 ## 🔍 Scripts de Manutenção
 
 \`\`\`bash
+
 # Verificar dependências desatualizadas
+
 pnpm outdated
 
 # Atualizar dependências (interativo)
+
 pnpm update -i
 
 # Auditoria de segurança
+
 pnpm audit
 
 # Verificar duplicatas
+
 pnpm dedupe
 
 # Limpar cache
+
 rm -rf node_modules/.pnpm-store
 pnpm install
 \`\`\`

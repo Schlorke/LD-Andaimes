@@ -35,7 +35,10 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
     <Button
       variant="ghost"
       size="sm"
-      className={cn('h-9 w-9 px-0', className)}
+      className={cn(
+        'h-9 w-9 px-0 text-gray-900 hover:text-orange-600 dark:text-white dark:hover:text-orange-400',
+        className
+      )}
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
       <Sun className="h-4 w-4 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />

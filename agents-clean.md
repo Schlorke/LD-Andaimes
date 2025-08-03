@@ -105,21 +105,21 @@
 
 \`\`\`text
 src/
-├── app/                   # Next.js App Router
-│   ├── globals.css        # Estilos Tailwind v4
-│   ├── layout.tsx         # Layout principal
-│   └── page.tsx           # Página inicial
-├── components/ui/         # shadcn/ui components
-│   ├── button.tsx         # Botões com variantes
-│   ├── card.tsx           # Cards flexíveis
-│   ├── hero.tsx           # Seções hero
-│   └── badge.tsx          # Badges e tags
+├── app/ # Next.js App Router
+│ ├── globals.css # Estilos Tailwind v4
+│ ├── layout.tsx # Layout principal
+│ └── page.tsx # Página inicial
+├── components/ui/ # shadcn/ui components
+│ ├── button.tsx # Botões com variantes
+│ ├── card.tsx # Cards flexíveis
+│ ├── hero.tsx # Seções hero
+│ └── badge.tsx # Badges e tags
 ├── lib/
-│   └── utils.ts           # Utilitários (cn, twMerge)
-└── stories/               # Stories Storybook
-    ├── Button.stories.tsx
-    ├── Hero.stories.tsx
-    └── LandingPage.stories.tsx
+│ └── utils.ts # Utilitários (cn, twMerge)
+└── stories/ # Stories Storybook
+├── Button.stories.tsx
+├── Hero.stories.tsx
+└── LandingPage.stories.tsx
 \`\`\`
 
 ### Convenções de Nomenclatura
@@ -240,24 +240,30 @@ size: 'sm' | 'md' | 'lg' | 'xl';
 ### Checklist "Antes de Commitar"
 
 \`\`\`bash
+
 # 1. Lint & Format
-pnpm run lint              # ESLint check
-pnpm run lint:fix          # Auto-fix issues
-pnpm run format            # Prettier format
+
+pnpm run lint # ESLint check
+pnpm run lint:fix # Auto-fix issues
+pnpm run format # Prettier format
 
 # 2. Type Check
-pnpm run type-check        # TypeScript validation
+
+pnpm run type-check # TypeScript validation
 
 # 3. Tests
-pnpm test                  # Unit tests
-pnpm run test:e2e          # E2E tests
+
+pnpm test # Unit tests
+pnpm run test:e2e # E2E tests
 
 # 4. Build Validation
-pnpm run build             # Production build
-pnpm run build-storybook   # Storybook build
+
+pnpm run build # Production build
+pnpm run build-storybook # Storybook build
 
 # 5. Visual Review
-pnpm run storybook         # Review components
+
+pnpm run storybook # Review components
 \`\`\`
 
 ## 10. Fluxo Multi-IA
@@ -350,30 +356,36 @@ pnpm run storybook         # Review components
 ## 13. Scripts Úteis
 
 \`\`\`bash
+
 # Desenvolvimento
-pnpm dev                   # Next.js dev server
-pnpm dev:storybook        # Storybook dev
+
+pnpm dev # Next.js dev server
+pnpm dev:storybook # Storybook dev
 
 # Build & Deploy
-pnpm build                # Production build
-pnpm start                # Production server
-pnpm deploy               # Deploy to Vercel
+
+pnpm build # Production build
+pnpm start # Production server
+pnpm deploy # Deploy to Vercel
 
 # Qualidade
-pnpm lint                 # ESLint check
-pnpm lint:fix             # Auto-fix lint issues
-pnpm format               # Prettier format
-pnpm type-check           # TypeScript check
+
+pnpm lint # ESLint check
+pnpm lint:fix # Auto-fix lint issues
+pnpm format # Prettier format
+pnpm type-check # TypeScript check
 
 # Testes
-pnpm test                 # Unit tests
-pnpm test:watch           # Watch mode
-pnpm test:e2e             # End-to-end tests
-pnpm test:coverage        # Coverage report
+
+pnpm test # Unit tests
+pnpm test:watch # Watch mode
+pnpm test:e2e # End-to-end tests
+pnpm test:coverage # Coverage report
 
 # Storybook
-pnpm storybook            # Development
-pnpm build-storybook      # Build for production
+
+pnpm storybook # Development
+pnpm build-storybook # Build for production
 \`\`\`
 
 ---

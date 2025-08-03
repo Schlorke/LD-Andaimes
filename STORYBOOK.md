@@ -7,13 +7,17 @@ Este guia explica como usar e contribuir com o Storybook do projeto LD Andaimes.
 ### Executar Storybook Local
 
 \`\`\`bash
+
 # Instalar dependências
+
 pnpm install
 
 # Executar Storybook (porta 6006)
+
 pnpm storybook
 
 # Build estático (para deploy)
+
 pnpm build-storybook
 \`\`\`
 
@@ -30,22 +34,22 @@ O projeto agora utiliza uma estrutura unificada em `src/` que elimina conflitos 
 
 \`\`\`text
 src/
-├── app/                   # Next.js App Router
-│   ├── globals.css        # Estilos Tailwind v4
-│   ├── layout.tsx         # Layout principal
-│   └── page.tsx           # Página inicial
-├── components/ui/         # Componentes shadcn/ui
-│   ├── button.tsx         # 5 variantes
-│   ├── hero.tsx           # 4 variantes
-│   ├── card.tsx           # 3 variantes
-│   └── badge.tsx          # Tags e badges
+├── app/ # Next.js App Router
+│ ├── globals.css # Estilos Tailwind v4
+│ ├── layout.tsx # Layout principal
+│ └── page.tsx # Página inicial
+├── components/ui/ # Componentes shadcn/ui
+│ ├── button.tsx # 5 variantes
+│ ├── hero.tsx # 4 variantes
+│ ├── card.tsx # 3 variantes
+│ └── badge.tsx # Tags e badges
 ├── lib/
-│   └── utils.ts           # Utilitários (cn, twMerge)
-└── stories/               # Stories do Storybook
-    ├── Button.stories.tsx
-    ├── Hero.stories.tsx
-    ├── LandingPage.stories.tsx
-    └── Configure.mdx
+│ └── utils.ts # Utilitários (cn, twMerge)
+└── stories/ # Stories do Storybook
+├── Button.stories.tsx
+├── Hero.stories.tsx
+├── LandingPage.stories.tsx
+└── Configure.mdx
 \`\`\`
 
 **Imports**: Todos os componentes são importados via `@/components/ui/` que resolve para `src/components/ui/`.
@@ -56,11 +60,11 @@ src/
 
 \`\`\`text
 src/stories/
-├── Button.stories.tsx         # Componente Button com 5 variantes
-├── Hero.stories.tsx          # Componente Hero com múltiplas configurações
-├── LandingPage.stories.tsx   # Página completa com seções
-├── Page.stories.ts           # Exemplos de página (template)
-└── Header.stories.ts         # Header component (template)
+├── Button.stories.tsx # Componente Button com 5 variantes
+├── Hero.stories.tsx # Componente Hero com múltiplas configurações
+├── LandingPage.stories.tsx # Página completa com seções
+├── Page.stories.ts # Exemplos de página (template)
+└── Header.stories.ts # Header component (template)
 \`\`\`
 
 ### Padrão de Nomenclatura
@@ -80,44 +84,44 @@ import type { Meta, StoryObj } from '@storybook/nextjs';
 import { MeuComponente } from '@/components/ui/meu-componente';
 
 const meta: Meta<typeof MeuComponente> = {
-  title: 'LD Andaimes/MeuComponente',
-  component: MeuComponente,
-  parameters: {
-    layout: 'centered', // ou 'fullscreen' para páginas
-    docs: {
-      description: {
-        component: 'Descrição do componente e seu propósito.',
-      },
-    },
-  },
-  tags: ['autodocs'],
-  argTypes: {
-    variant: {
-      control: { type: 'select' },
-      options: ['primary', 'secondary'],
-      description: 'Variante visual do componente',
-    },
-    // Desabilitar controles para props React
-    onClick: { table: { disable: true } },
-    children: { table: { disable: true } },
-  },
+title: 'LD Andaimes/MeuComponente',
+component: MeuComponente,
+parameters: {
+layout: 'centered', // ou 'fullscreen' para páginas
+docs: {
+description: {
+component: 'Descrição do componente e seu propósito.',
+},
+},
+},
+tags: ['autodocs'],
+argTypes: {
+variant: {
+control: { type: 'select' },
+options: ['primary', 'secondary'],
+description: 'Variante visual do componente',
+},
+// Desabilitar controles para props React
+onClick: { table: { disable: true } },
+children: { table: { disable: true } },
+},
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    variant: 'primary',
-    children: 'Exemplo',
-  },
+args: {
+variant: 'primary',
+children: 'Exemplo',
+},
 };
 
 export const Secondary: Story = {
-  args: {
-    variant: 'secondary',
-    children: 'Exemplo Secundário',
-  },
+args: {
+variant: 'secondary',
+children: 'Exemplo Secundário',
+},
 };
 \`\`\`
 
@@ -127,12 +131,12 @@ Quando o componente aceita React elements como props, use `render`:
 
 \`\`\`tsx
 export const ComElementos: Story = {
-  render: args => (
-    <MeuComponente
-      {...args}
-      action={<Button variant="primary">Clique Aqui</Button>}
-    />
-  ),
+render: args => (
+<MeuComponente
+{...args}
+action={<Button variant="primary">Clique Aqui</Button>}
+/>
+),
 };
 \`\`\`
 
@@ -146,13 +150,13 @@ O projeto tem filtros configurados para prevenir erros com propriedades React:
 
 \`\`\`ts
 typescript: {
-  reactDocgen: 'react-docgen-typescript',
-  reactDocgenTypescriptOptions: {
-    propFilter: (prop) => {
-      // Excluir propriedades problemáticas
-      return !['asChild', 'ref', 'key', '$$typeof'].includes(prop.name);
-    },
-  },
+reactDocgen: 'react-docgen-typescript',
+reactDocgenTypescriptOptions: {
+propFilter: (prop) => {
+// Excluir propriedades problemáticas
+return !['asChild', 'ref', 'key', '$$typeof'].includes(prop.name);
+},
+},
 },
 \`\`\`
 
@@ -173,10 +177,10 @@ Para evitar erros, desabilite controles para:
 
 \`\`\`tsx
 argTypes: {
-  primaryAction: { table: { disable: true } },
-  secondaryAction: { table: { disable: true } },
-  onClick: { table: { disable: true } },
-  className: { table: { disable: true } },
+primaryAction: { table: { disable: true } },
+secondaryAction: { table: { disable: true } },
+onClick: { table: { disable: true } },
+className: { table: { disable: true } },
 }
 \`\`\`
 
@@ -188,9 +192,9 @@ As stories de página incluem configurações de viewport:
 
 \`\`\`tsx
 export const Mobile: Story = {
-  parameters: {
-    viewport: { defaultViewport: 'mobile' },
-  },
+parameters: {
+viewport: { defaultViewport: 'mobile' },
+},
 };
 \`\`\`
 
@@ -216,11 +220,11 @@ Use dados que representem casos reais:
 
 \`\`\`tsx
 export const Realistic: Story = {
-  args: {
-    title: 'LD Andaimes - Soluções Completas',
-    subtitle:
-      'Andaimes, escoramentos e acessórios para construção civil com mais de 20 anos de experiência.',
-  },
+args: {
+title: 'LD Andaimes - Soluções Completas',
+subtitle:
+'Andaimes, escoramentos e acessórios para construção civil com mais de 20 anos de experiência.',
+},
 };
 \`\`\`
 
@@ -230,11 +234,11 @@ Inclua descrições detalhadas:
 
 \`\`\`tsx
 parameters: {
-  docs: {
-    description: {
-      story: 'Esta variante é usada para ações primárias como CTAs principais.',
-    },
-  },
+docs: {
+description: {
+story: 'Esta variante é usada para ações primárias como CTAs principais.',
+},
+},
 },
 \`\`\`
 
@@ -255,14 +259,14 @@ Teste com o addon de acessibilidade habilitado:
 \`\`\`tsx
 // ❌ Evitar
 export const Wrong: Story = {
-  args: {
-    action: <Button>Click</Button>, // Causa erro de Symbol
-  },
+args: {
+action: <Button>Click</Button>, // Causa erro de Symbol
+},
 };
 
 // ✅ Correto
 export const Right: Story = {
-  render: args => <Component {...args} action={<Button>Click</Button>} />,
+render: args => <Component {...args} action={<Button>Click</Button>} />,
 };
 \`\`\`
 
@@ -272,7 +276,7 @@ export const Right: Story = {
 
 \`\`\`tsx
 const meta: Meta<typeof Component> = {
-  /* config */
+/_ config _/
 };
 export default meta; // ← Essencial
 \`\`\`
@@ -282,11 +286,15 @@ export default meta; // ← Essencial
 **Solução**: Limpar cache e reiniciar:
 
 \`\`\`bash
+
 # Parar Storybook
+
 # Limpar cache
+
 rm -rf .next storybook-static node_modules/.cache
 
 # Reiniciar
+
 pnpm storybook
 \`\`\`
 

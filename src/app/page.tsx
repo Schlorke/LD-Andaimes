@@ -1,69 +1,87 @@
-"use client"
+'use client';
 
-import type React from "react"
-import Image from "next/image"
-import { Hero } from "@/components/ui/hero"
-import { Button } from "@/components/ui/button"
-import { ProductsSection } from "@/components/sections/products-section"
-import { PortfolioSection } from "@/components/sections/portfolio-section"
-import { Phone, ArrowRight, Shield, Clock, Award, Users, Star } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import type React from 'react';
+import Image from 'next/image';
+import { Hero } from '@/components/ui/hero';
+import { Button } from '@/components/ui/button';
+import { ProductsSection } from '@/components/sections/products-section';
+import { PortfolioSection } from '@/components/sections/portfolio-section';
+import {
+  Phone,
+  ArrowRight,
+  Shield,
+  Clock,
+  Award,
+  Users,
+  Star,
+} from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const stats = [
-  { icon: Award, value: "10+", label: "Anos de Experiência" },
-  { icon: Users, value: "500+", label: "Projetos Realizados" },
-  { icon: Shield, value: "100%", label: "Equipamentos Certificados" },
-  { icon: Clock, value: "24/7", label: "Suporte Técnico" },
-]
+  { icon: Award, value: '10+', label: 'Anos de Experiência' },
+  { icon: Users, value: '500+', label: 'Projetos Realizados' },
+  { icon: Shield, value: '100%', label: 'Equipamentos Certificados' },
+  { icon: Clock, value: '24/7', label: 'Suporte Técnico' },
+];
 
 const testimonials = [
   {
-    name: "João Silva",
-    role: "Engenheiro Civil, Construtora Alfa",
-    image: "/placeholder-user.jpg",
+    name: 'João Silva',
+    role: 'Engenheiro Civil, Construtora Alfa',
+    image: '/placeholder-user.jpg',
     quote:
-      "A LD Andaimes é nossa parceira de confiança. A qualidade dos equipamentos e a pontualidade na entrega são impecáveis. Segurança em primeiro lugar, sempre!",
+      'A LD Andaimes é nossa parceira de confiança. A qualidade dos equipamentos e a pontualidade na entrega são impecáveis. Segurança em primeiro lugar, sempre!',
   },
   {
-    name: "Mariana Costa",
-    role: "Arquiteta, MC Arquitetura",
-    image: "/placeholder-user.jpg",
+    name: 'Mariana Costa',
+    role: 'Arquiteta, MC Arquitetura',
+    image: '/placeholder-user.jpg',
     quote:
-      "O atendimento técnico da LD fez toda a diferença no nosso projeto. Eles entenderam nossa necessidade e forneceram a solução ideal. Recomendo fortemente.",
+      'O atendimento técnico da LD fez toda a diferença no nosso projeto. Eles entenderam nossa necessidade e forneceram a solução ideal. Recomendo fortemente.',
   },
-]
+];
 
-function ScrollReveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
+function ScrollReveal({
+  children,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0, y: 60 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+      transition={{ duration: 1.2, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
-  )
+  );
 }
 
 export default function HomePage() {
   return (
-    <div className="text-foreground overflow-hidden min-h-screen">
+    <div className="text-foreground min-h-screen overflow-hidden">
       {/* Hero Section */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
         <Hero
           title={
             <span className="block">
-              A{" "}
-              <span className="bg-gradient-to-r from-primary-500 via-primary-600 to-accent-400 bg-clip-text text-transparent">
+              A{' '}
+              <span className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent">
                 Próxima Geração
-              </span>{" "}
+              </span>{' '}
               de Segurança em Andaimes
             </span>
           }
@@ -87,26 +105,30 @@ export default function HomePage() {
 
       {/* Stats Section */}
       <ScrollReveal>
-        <section className="py-24 relative">
-          <div className="container mx-auto px-4 max-w-7xl">
+        <section className="relative py-24">
+          <div className="container mx-auto max-w-7xl px-4">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat, index) => {
-                const Icon = stat.icon
+                const Icon = stat.icon;
                 return (
-                  <ScrollReveal key={index} delay={index * 0.2}>
+                  <ScrollReveal key={index} delay={index * 0.3}>
                     <motion.div
                       className="group cursor-pointer text-center"
-                      whileHover={{ scale: 1.05, y: -5 }}
-                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      whileHover={{ scale: 1.05, y: -8 }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                     >
-                      <div className="rounded-2xl border border-primary-100/50 bg-white/80 backdrop-blur-sm p-8 shadow-card-3d group-hover:shadow-card-3d-hover transition-all duration-300">
-                        <Icon className="mx-auto mb-4 h-12 w-12 text-primary-500" />
-                        <div className="mb-2 text-4xl font-bold text-gray-900 font-display">{stat.value}</div>
-                        <div className="text-lg font-semibold text-gray-600">{stat.label}</div>
+                      <div className="rounded-2xl bg-white/90 p-8 shadow-lg backdrop-blur-sm transition-all duration-500 hover:shadow-2xl">
+                        <Icon className="mx-auto mb-4 h-12 w-12 text-orange-500" />
+                        <div className="font-display mb-2 text-4xl font-bold text-gray-900">
+                          {stat.value}
+                        </div>
+                        <div className="text-lg font-semibold text-gray-600">
+                          {stat.label}
+                        </div>
                       </div>
                     </motion.div>
                   </ScrollReveal>
-                )
+                );
               })}
             </div>
           </div>
@@ -125,14 +147,14 @@ export default function HomePage() {
 
       {/* About Section */}
       <ScrollReveal>
-        <section id="sobre" className="py-32 relative overflow-hidden">
-          <div className="container mx-auto px-4 max-w-7xl">
+        <section id="sobre" className="relative overflow-hidden py-32">
+          <div className="container mx-auto max-w-7xl px-4">
             <div className="grid grid-cols-1 items-center gap-20 lg:grid-cols-2">
               <ScrollReveal delay={0.3}>
                 <motion.div
-                  className="relative h-[500px] overflow-hidden rounded-3xl shadow-card-3d"
-                  whileHover={{ scale: 1.02, y: -5 }}
-                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative h-[500px] overflow-hidden rounded-3xl shadow-xl"
+                  whileHover={{ scale: 1.02, y: -8 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <Image
                     src="/images/entrega-andaimes.jpg"
@@ -147,7 +169,7 @@ export default function HomePage() {
                 <div className="space-y-6">
                   <Badge
                     variant="secondary"
-                    className="mb-6 bg-gradient-to-r from-primary-100 to-accent-100 px-4 py-2 text-sm font-semibold text-primary-800"
+                    className="mb-6 bg-gradient-to-r from-orange-100 to-orange-200 px-4 py-2 text-sm font-semibold text-orange-800"
                   >
                     Sobre a LD Andaimes
                   </Badge>
@@ -156,12 +178,15 @@ export default function HomePage() {
                   </h2>
                   <div className="space-y-6 text-lg leading-relaxed text-gray-600">
                     <p>
-                      Fundada em 2014 em Porto Alegre, a LD Andaimes nasceu com o compromisso de oferecer soluções
-                      completas em andaimes e escoramentos para a construção civil.
+                      Fundada em 2014 em Porto Alegre, a LD Andaimes nasceu com
+                      o compromisso de oferecer soluções completas em andaimes e
+                      escoramentos para a construção civil.
                     </p>
                     <p>
-                      Nossa sede de 2.400m² abriga um amplo estoque de equipamentos certificados e uma equipe técnica
-                      especializada, garantindo agilidade e qualidade em cada projeto.
+                      Nossa sede de 2.400m² abriga um amplo estoque de
+                      equipamentos certificados e uma equipe técnica
+                      especializada, garantindo agilidade e qualidade em cada
+                      projeto.
                     </p>
                   </div>
                   <Button size="lg" className="mt-8">
@@ -177,13 +202,13 @@ export default function HomePage() {
 
       {/* Testimonials Section */}
       <ScrollReveal>
-        <section className="py-32 relative">
-          <div className="container mx-auto px-4 max-w-7xl">
+        <section className="relative py-32">
+          <div className="container mx-auto max-w-7xl px-4">
             <div className="mb-16 text-center">
-              <ScrollReveal>
+              <ScrollReveal delay={0.2}>
                 <Badge
                   variant="secondary"
-                  className="mb-6 bg-gradient-to-r from-yellow-100 to-accent-100 px-4 py-2 text-sm font-semibold text-yellow-800"
+                  className="mb-6 bg-gradient-to-r from-orange-100 to-orange-200 px-4 py-2 text-sm font-semibold text-orange-800"
                 >
                   Depoimentos
                 </Badge>
@@ -201,32 +226,39 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
               {testimonials.map((testimonial, index) => (
-                <ScrollReveal key={index} delay={index * 0.3}>
+                <ScrollReveal key={index} delay={index * 0.4}>
                   <motion.div
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{ scale: 1.02, y: -8 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    <Card className="border-0 border-l-4 border-primary-500 bg-white/80 backdrop-blur-sm shadow-card-3d hover:shadow-card-3d-hover transition-all duration-300">
+                    <Card className="border-0 border-l-4 border-orange-500 bg-white/90 shadow-lg backdrop-blur-sm transition-all duration-500 hover:shadow-2xl">
                       <CardContent className="p-8 pt-8">
                         <div className="mb-6 flex items-center">
                           <Image
-                            src={testimonial.image || "/placeholder.svg"}
+                            src={testimonial.image || '/placeholder.svg'}
                             alt={`Foto de ${testimonial.name}`}
                             width={80}
                             height={80}
                             className="mr-6 rounded-full shadow-lg"
                           />
                           <div>
-                            <p className="text-xl font-semibold text-gray-900">{testimonial.name}</p>
-                            <p className="mt-1 text-sm text-gray-600">{testimonial.role}</p>
+                            <p className="text-xl font-semibold text-gray-900">
+                              {testimonial.name}
+                            </p>
+                            <p className="mt-1 text-sm text-gray-600">
+                              {testimonial.role}
+                            </p>
                           </div>
                         </div>
                         <blockquote className="mb-6 text-lg leading-relaxed text-gray-700 italic">
-                          "{testimonial.quote}"
+                          &ldquo;{testimonial.quote}&rdquo;
                         </blockquote>
                         <div className="flex">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="h-6 w-6 fill-current text-yellow-400" />
+                            <Star
+                              key={i}
+                              className="h-6 w-6 fill-current text-orange-400"
+                            />
                           ))}
                         </div>
                       </CardContent>
@@ -242,11 +274,11 @@ export default function HomePage() {
       {/* CTA Section */}
       <ScrollReveal>
         <section className="py-32">
-          <div className="container mx-auto px-4 max-w-7xl">
+          <div className="container mx-auto max-w-7xl px-4">
             <motion.div
-              className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900 via-gray-800 to-primary-900 p-16 text-center text-white shadow-card-3d"
-              whileHover={{ scale: 1.01, y: -5 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900 p-16 text-center text-white shadow-2xl"
+              whileHover={{ scale: 1.01, y: -8 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="relative z-10">
                 <ScrollReveal>
@@ -254,12 +286,13 @@ export default function HomePage() {
                     Pronto para elevar seu projeto?
                   </h2>
                 </ScrollReveal>
-                <ScrollReveal delay={0.2}>
+                <ScrollReveal delay={0.3}>
                   <p className="mx-auto mb-12 max-w-3xl text-xl leading-relaxed opacity-90">
-                    Nossa equipe técnica está pronta para encontrar a melhor solução para sua obra.
+                    Nossa equipe técnica está pronta para encontrar a melhor
+                    solução para sua obra.
                   </p>
                 </ScrollReveal>
-                <ScrollReveal delay={0.4}>
+                <ScrollReveal delay={0.6}>
                   <div className="flex flex-col justify-center gap-6 sm:flex-row">
                     <Button size="lg" asChild>
                       <a href="https://wa.me/5551994647458?text=Olá! Gostaria de solicitar um orçamento para andaimes.">
@@ -282,5 +315,5 @@ export default function HomePage() {
         </section>
       </ScrollReveal>
     </div>
-  )
+  );
 }

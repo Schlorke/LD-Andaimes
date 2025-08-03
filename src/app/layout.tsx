@@ -6,7 +6,7 @@ import { TooltipProvider } from '@/components/ui/tooltip';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { WhatsAppFloat } from '@/components/ui/whatsapp-float';
-import LenisProvider from '@/lib/lenis-provider';
+// import LenisProvider from '@/lib/lenis-provider';
 import './globals.css';
 
 const inter = Inter({
@@ -92,16 +92,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <LenisProvider>
-            <TooltipProvider>
-              <div className="relative flex min-h-screen flex-col">
-                <Header />
-                <main className="flex-1">{children}</main>
-                <Footer />
-              </div>
-              <WhatsAppFloat />
-            </TooltipProvider>
-          </LenisProvider>
+          <TooltipProvider>
+            <div className="relative flex min-h-screen flex-col">
+              <Header />
+              <main className="flex-1 pt-20">{children}</main>
+              <Footer />
+            </div>
+            <WhatsAppFloat />
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

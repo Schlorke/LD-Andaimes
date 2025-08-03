@@ -38,26 +38,34 @@ Foco em **performance, acessibilidade AA+** e design system consistente com comp
 ### Setup Local
 
 \`\`\`bash
+
 # Instalar dependências
+
 pnpm install
 
 # Desenvolvimento (Next.js com Turbopack)
+
 pnpm dev
+
 # Abre <http://localhost:3000>
 
 # Storybook (Design System)
+
 pnpm storybook
+
 # Abre <http://localhost:6006>
 
 # Build de produção
+
 pnpm build
 pnpm start
 
 # Testes e qualidade
-pnpm lint          # ESLint
-pnpm lint:fix      # ESLint com correções automáticas
-pnpm format        # Prettier
-pnpm format:check  # Verificar formatação
+
+pnpm lint # ESLint
+pnpm lint:fix # ESLint com correções automáticas
+pnpm format # Prettier
+pnpm format:check # Verificar formatação
 \`\`\`
 
 ### Scripts Disponíveis
@@ -96,21 +104,21 @@ O projeto segue as melhores práticas de desenvolvimento orientado a componentes
 \`\`\`text
 src/
 ├── app/
-│   ├── globals.css        # Estilos globais Tailwind v4
-│   ├── layout.tsx         # Layout principal Next.js
-│   └── page.tsx           # Página inicial
-├── components/ui/         # Componentes base (shadcn/ui)
-│   ├── button.tsx         # Botões com 5 variantes
-│   ├── card.tsx           # Cards flexíveis
-│   ├── hero.tsx           # Seções hero
-│   └── badge.tsx          # Badges e tags
+│ ├── globals.css # Estilos globais Tailwind v4
+│ ├── layout.tsx # Layout principal Next.js
+│ └── page.tsx # Página inicial
+├── components/ui/ # Componentes base (shadcn/ui)
+│ ├── button.tsx # Botões com 5 variantes
+│ ├── card.tsx # Cards flexíveis
+│ ├── hero.tsx # Seções hero
+│ └── badge.tsx # Badges e tags
 ├── lib/
-│   └── utils.ts           # Utilitários (cn, twMerge)
-└── stories/               # Stories do Storybook
-    ├── Button.stories.tsx
-    ├── Hero.stories.tsx
-    ├── LandingPage.stories.tsx
-    └── Configure.mdx
+│ └── utils.ts # Utilitários (cn, twMerge)
+└── stories/ # Stories do Storybook
+├── Button.stories.tsx
+├── Hero.stories.tsx
+├── LandingPage.stories.tsx
+└── Configure.mdx
 \`\`\`
 
 ## 📑 Roteiro Atualizado

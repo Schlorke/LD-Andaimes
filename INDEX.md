@@ -64,35 +64,35 @@ Guia completo para navegar pela documentação do projeto LD Andaimes.
 \`\`\`text
 LD-Andaimes/
 ├── 📄 Documentação
-│   ├── README.md           # Visão geral e setup
-│   ├── CHANGELOG.md        # Histórico de mudanças
-│   ├── design-system.md    # Sistema de design
-│   ├── STORYBOOK.md       # Guia do Storybook
-│   ├── TECH-STACK.md      # Tecnologias e dependências
-│   └── INDEX.md           # Este arquivo
+│ ├── README.md # Visão geral e setup
+│ ├── CHANGELOG.md # Histórico de mudanças
+│ ├── design-system.md # Sistema de design
+│ ├── STORYBOOK.md # Guia do Storybook
+│ ├── TECH-STACK.md # Tecnologias e dependências
+│ └── INDEX.md # Este arquivo
 │
 ├── 🎨 Componentes & Stories (src/)
-│   ├── app/               # App Next.js com layout e CSS
-│   ├── components/ui/     # Componentes base (shadcn/ui)
-│   ├── lib/               # Utilitários (utils.ts)
-│   └── stories/           # Stories do Storybook
+│ ├── app/ # App Next.js com layout e CSS
+│ ├── components/ui/ # Componentes base (shadcn/ui)
+│ ├── lib/ # Utilitários (utils.ts)
+│ └── stories/ # Stories do Storybook
 │
 ├── ⚙️ Configuração
-│   ├── package.json       # Dependências e scripts
-│   ├── tsconfig.json      # Configuração TypeScript
-│   ├── tailwind.config.*  # Configuração Tailwind
-│   ├── next.config.*      # Configuração Next.js
-│   └── eslint.config.*    # Configuração ESLint
+│ ├── package.json # Dependências e scripts
+│ ├── tsconfig.json # Configuração TypeScript
+│ ├── tailwind.config._ # Configuração Tailwind
+│ ├── next.config._ # Configuração Next.js
+│ └── eslint.config.\* # Configuração ESLint
 │
 ├── 🧪 Testes & Qualidade
-│   ├── vitest.config.ts   # Configuração de testes
-│   ├── .markdownlint.json # Linting de Markdown
-│   └── .prettierrc        # Configuração Prettier
+│ ├── vitest.config.ts # Configuração de testes
+│ ├── .markdownlint.json # Linting de Markdown
+│ └── .prettierrc # Configuração Prettier
 │
 └── 🏗️ Build & Deploy
-    ├── .nvmrc             # Versão Node.js
-    ├── vercel.json        # Config Vercel
-    └── .storybook/        # Configuração Storybook
+├── .nvmrc # Versão Node.js
+├── vercel.json # Config Vercel
+└── .storybook/ # Configuração Storybook
 \`\`\`
 
 ## 🚀 Quick Start
@@ -100,31 +100,40 @@ LD-Andaimes/
 ### 1. Setup Inicial
 
 \`\`\`bash
+
 # Clonar repositório
+
 git clone https://github.com/Schlorke/LD-Andaimes.git
 cd LD-Andaimes
 
 # Instalar dependências
+
 pnpm install
 \`\`\`
 
 ### 2. Desenvolvimento
 
 \`\`\`bash
+
 # Servidor Next.js (localhost:3000)
+
 pnpm dev
 
 # Storybook (localhost:6006)
+
 pnpm storybook
 \`\`\`
 
 ### 3. Build & Deploy
 
 \`\`\`bash
+
 # Build de produção
+
 pnpm build
 
 # Build do Storybook
+
 pnpm build-storybook
 \`\`\`
 
