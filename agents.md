@@ -111,7 +111,7 @@ src/
 │   └── page.tsx           # Página inicial
 ├── components/ui/         # shadcn/ui components
 │   ├── button.tsx         # Botões com variantes
-│   ├── card.tsx           # Cards flexíveis  
+│   ├── card.tsx           # Cards flexíveis
 │   ├── hero.tsx           # Seções hero
 │   └── badge.tsx          # Badges e tags
 ├── lib/
