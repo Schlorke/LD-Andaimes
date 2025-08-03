@@ -230,13 +230,13 @@ Compromisso de elevar os clientes com ampla linha de equipamentos normatizados, 
 
 ### Meta Tags Essenciais
 
-```html
+\`\`\`html
 <title>LD Andaimes - Locação e Venda de Andaimes em Porto Alegre</title>
 <meta
   name="description"
   content="Locação e venda de andaimes, escoras e equipamentos para construção civil em Porto Alegre. Mais de 10 anos de experiência e segurança garantida."
 />
-```
+\`\`\`
 
 ## 📊 Métricas de Sucesso
 

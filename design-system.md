@@ -6,14 +6,14 @@ Sistema de design para a plataforma de locação/venda de andaimes e escoramento
 
 O design system está completamente documentado no **Storybook 9.1.0**:
 
-```bash
+\`\`\`bash
 # Executar Storybook local
 pnpm storybook
 # Abre http://localhost:6006
 
 # Build estático do Storybook
 pnpm build-storybook
-```
+\`\`\`
 
 ### Stories Disponíveis
 
@@ -27,7 +27,7 @@ pnpm build-storybook
 
 #### Cores
 
-```css
+\`\`\`css
 /* Primary - Laranja LD Andaimes */
 --ld-orange-50: #fff7ed;
 --ld-orange-100: #ffedd5;
@@ -60,7 +60,7 @@ pnpm build-storybook
 --ld-gray-700: #374151;
 --ld-gray-800: #1f2937;
 --ld-gray-900: #111827;
-```
+\`\`\`
 
 #### Tipografia
 
@@ -137,12 +137,12 @@ Sistema robusto de botões com 5 variantes principais:
 
 **Exemplo:**
 
-```tsx
+\`\`\`tsx
 <Button variant="primary" size="lg">
   <Phone className="h-5 w-5" />
   Solicitar Orçamento
 </Button>
-```
+\`\`\`
 
 ### Hero Component
 
@@ -205,7 +205,7 @@ Demonstração completa de component-driven development:
 
 Função utilitária para combinar classes CSS:
 
-```tsx
+\`\`\`tsx
 import { cn } from '@/lib/utils';
 
 // Combina classes condicionalmente
@@ -214,7 +214,7 @@ const buttonClass = cn(
   variant === 'primary' && 'primary-class',
   disabled && 'disabled-class'
 );
-```
+\`\`\`
 
 **Tecnologias:**
 

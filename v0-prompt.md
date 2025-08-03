@@ -21,7 +21,7 @@ A **LD Andaimes** é uma empresa real fundada em 2014 em Porto Alegre/RS, especi
 
 ### Paleta de Cores (HSL Values)
 
-```css
+\`\`\`css
 /* Cores Primárias */
 --primary: 24 88% 45%; /* #E36A00 - Laranja LD */
 --accent: 30 100% 60%; /* #FFAA33 - Amarelo destaque */
@@ -32,7 +32,7 @@ A **LD Andaimes** é uma empresa real fundada em 2014 em Porto Alegre/RS, especi
 --success: 151 60% 40%; /* #10B981 - Verde sucesso */
 --warning: 45 100% 50%; /* #F59E0B - Amarelo alerta */
 --danger: 0 75% 50%; /* #EF4444 - Vermelho erro */
-```
+\`\`\`
 
 ### Tipografia
 
@@ -60,14 +60,14 @@ Usar SEMPRE os componentes do shadcn/ui como base:
 
 ### Estrutura de Componentes
 
-```text
+\`\`\`text
 /components
   /ui            # shadcn/ui base components
   /custom        # LD Andaimes specific components
     /sections    # Page sections (Hero, Products, About)
     /forms       # Contact forms, quote forms
     /layout      # Header, Footer, Navigation
-```
+\`\`\`
 
 ## 🚀 Fases do Projeto
 
@@ -133,7 +133,7 @@ Criar uma landing page moderna e profissional com:
 
 ### Nomenclatura
 
-```typescript
+\`\`\`typescript
 // Componentes
 export function HeroSection() {}
 export function ProductCard() {}
@@ -150,11 +150,11 @@ interface HeroSectionProps {
 className = 'hero-section';
 className = 'product-card';
 className = 'contact-form';
-```
+\`\`\`
 
 ### Estrutura de Componente
 
-```typescript
+\`\`\`typescript
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
@@ -169,7 +169,7 @@ export function Component({ prop }: ComponentProps) {
     </section>
   );
 }
-```
+\`\`\`
 
 ## 🎯 Exemplos de Prompts Específicos
 
