@@ -2,6 +2,25 @@
 
 Sistema de design para a plataforma de locação/venda de andaimes e escoramentos da LD Andaimes.
 
+## 📚 Storybook
+
+O design system está completamente documentado no **Storybook 9.1.0**:
+
+```bash
+# Executar Storybook local
+pnpm storybook
+# Abre http://localhost:6006
+
+# Build estático do Storybook
+pnpm build-storybook
+```
+
+### Stories Disponíveis
+
+- **LD Andaimes/Button** - Sistema de botões com 5 variantes
+- **LD Andaimes/Hero** - Componente hero com 5 configurações
+- **LD Andaimes/Pages/Landing Page** - Página completa com seções
+
 ## 🎨 Foundations
 
 ### Design Tokens
@@ -98,6 +117,60 @@ Container para conteúdo estruturado.
 
 **Variantes:**
 
+## 🧩 Componentes Implementados
+
+### Button
+
+Sistema robusto de botões com 5 variantes principais:
+
+**Variantes disponíveis:**
+
+- `primary` - Ação principal (laranja LD)
+- `secondary` - Ação secundária
+- `accent` - Destaque especial (amarelo)
+- `ghost` - Ação sutil, transparente
+- `destructive` - Ações de remoção/cancelamento
+
+**Tamanhos:** `sm`, `md`, `lg`, `xl`
+
+**Estados:** default, hover, active, disabled
+
+**Exemplo:**
+
+```tsx
+<Button variant="primary" size="lg">
+  <Phone className="h-5 w-5" />
+  Solicitar Orçamento
+</Button>
+```
+
+### Hero
+
+Componente para seções principais com CTA integrado:
+
+**Variantes:**
+
+- `default` - Layout padrão com fundo neutro
+- `gradient` - Gradiente LD Andaimes
+- `image` - Com imagem de fundo
+- `minimal` - Versão simplificada
+
+**Tamanhos:** `sm`, `md`, `lg`, `xl`
+
+**Props principais:**
+
+- `title` - Título principal
+- `subtitle` - Descrição/subtítulo
+- `primaryAction` - Botão principal (React element)
+- `secondaryAction` - Botão secundário (React element)
+- `backgroundImage` - URL da imagem de fundo
+
+### Card
+
+Container flexível para conteúdo agrupado.
+
+**Variantes:**
+
 - `default` - Borda sutil
 - `elevated` - Sombra pronunciada
 - `outlined` - Borda destacada
@@ -109,6 +182,44 @@ Indicadores de status e categorias.
 **Variantes:**
 
 - `default`, `secondary`, `success`, `warning`, `error`, `info`
+
+### Páginas Completas
+
+#### LandingPage
+
+Demonstração completa de component-driven development:
+
+- **Hero Section** - Título, subtítulo e CTAs
+- **Services Section** - Grid de serviços com ícones
+- **CTA Section** - Chamada final para ação
+
+**Stories disponíveis:**
+
+- `Default` - Versão completa
+- `Mobile` - Otimizada para mobile
+- `Alternative` - Dados mock alternativos
+
+## 🔧 Utilitários
+
+### cn() function
+
+Função utilitária para combinar classes CSS:
+
+```tsx
+import { cn } from '@/lib/utils';
+
+// Combina classes condicionalmente
+const buttonClass = cn(
+  'base-class',
+  variant === 'primary' && 'primary-class',
+  disabled && 'disabled-class'
+);
+```
+
+**Tecnologias:**
+
+- `clsx` - Combinação condicional de classes
+- `tailwind-merge` - Merge inteligente de classes Tailwind
 
 ### Input
 

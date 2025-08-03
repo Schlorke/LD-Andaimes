@@ -16,6 +16,17 @@ const config: StorybookConfig = {
   core: {
     builder: '@storybook/builder-webpack5',
   },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: prop => {
+        // Filtrar propriedades que podem causar problemas com Symbol
+        const excludedProps = ['asChild', 'ref', 'key', '$$typeof'];
+        return !excludedProps.includes(prop.name);
+      },
+    },
+  },
 };
 
 export default config;

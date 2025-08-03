@@ -7,21 +7,14 @@ const meta: Meta<typeof Button> = {
   component: Button,
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'Componente Button customizado para LD Andaimes com variantes específicas do design system.',
+      },
+    },
   },
   tags: ['autodocs'],
-  argTypes: {
-    variant: {
-      control: 'select',
-      options: ['primary', 'secondary', 'accent', 'ghost', 'destructive'],
-    },
-    size: {
-      control: 'select',
-      options: ['sm', 'md', 'lg', 'xl'],
-    },
-    disabled: {
-      control: 'boolean',
-    },
-  },
 };
 
 export default meta;
