@@ -2,23 +2,50 @@
 
 > Single source of truth for all AIs working on this project
 
-## 1. Propósito
+## 1. Propósito & Missão do Projeto
 
-**LD Andaimes** é uma plataforma digital para locação e venda de andaimes e escoramentos, desenvolvida com foco em:
+**LD Andaimes** é uma empresa real fundada em **2014 em Porto Alegre/RS** especializada em locação e venda de andaimes e escoramentos. Este projeto visa desenvolver uma **plataforma digital escalável** para digitalizar completamente o negócio.
 
-- 🏗️ **B2B**: Construtoras e empresas do setor
-- 📱 **Responsividade**: Mobile-first design
-- ♿ **Acessibilidade**: WCAG 2.2 AA compliance
-- 🚀 **Performance**: Core Web Vitals otimizados
+## 2. Missão da Empresa (OBRIGATÓRIO seguir)
 
-### Objetivos
+"Oferecer soluções em andaimes com agilidade, de forma organizada e com total comprometimento com o cliente, garantindo segurança, eficiência e excelência em cada projeto."
 
-- Digitalizar processo de locação/venda
-- Interface intuitiva para gestão de equipamentos
-- Sistema de cotações e pedidos online
-- Dashboard analítico para tomada de decisões
+## 3. Proposta de Valor Central
 
-## 2. Stack Atual (Agosto 2025)
+> "Segurança com qualidade e eficiência"
+
+## 4. Contexto do Negócio Real
+
+- **Fundação**: 2014 (11 anos de mercado)
+- **Sede**: 2400m² em Porto Alegre - RS
+- **Segmento**: B2B para construtoras e empresas
+- **Diferencial**: Equipamentos normatizados e atendimento regional
+- **Clientes**: Construtoras, engenheiros, profissionais da construção civil
+
+### Produtos Principais (Catálogo Real)
+
+1. **Andaimes Fachadeiros** - Estruturas para fachadas de prédios
+2. **Torres de Serviço** - Andaimes modulares com rodízios
+3. **Escoras Metálicas** - Sustentação temporária para lajes
+4. **Chapas Tapa Vala** - Proteção para obras urbanas
+5. **Bandejas de Proteção** - Segurança contra queda de materiais
+6. **Escadas para Andaime** - Acesso seguro entre níveis
+
+### Objetivos do Projeto Digital
+
+- **Fase 1 (MVP)**: Landing page institucional com catálogo
+- **Fase 2**: Portal B2B com cotações online
+- **Fase 3**: E-commerce B2B completo
+- **Fase 4**: Marketplace para múltiplos fornecedores
+
+### Contatos da Empresa
+
+- **Telefones**: (51) 3276.3836 | (51) 3276.1982
+- **WhatsApp**: (51) 99464.7458 | (51) 99464.9664
+- **Email**: <comercial@ldandaimes.com.br>
+- **Endereço**: Rua Sr. do Bom Fim, 540 - Sarandi, Porto Alegre/RS
+
+## 5. Stack Atual (Agosto 2025)
 
 ### Frontend Core
 
@@ -45,9 +72,9 @@
 - **GitHub Actions** (CI/CD pipeline)
 - **Vercel** (hosting & deployment)
 
-## 3. Tokens de Design
+## 6. Tokens de Design
 
-### 🎨 Paleta de Cores (Light Mode)
+### Paleta de Cores (Light Mode)
 
 | Token         | HSL           | Hex       | Uso                     |
 | ------------- | ------------- | --------- | ----------------------- |
@@ -59,20 +86,20 @@
 | `warning`     | `45 100% 50%` | `#F59E0B` | Alertas                 |
 | `danger`      | `0 75% 50%`   | `#EF4444` | Erros críticos          |
 
-### 📝 Tipografia
+### Tipografia
 
 - **Display/Headers**: **Jost** (Google Fonts)
 - **Body/UI**: **Inter** (Google Fonts)
 - **Mono/Code**: **JetBrains Mono** (Google Fonts)
 
-### 📐 Espaçamento & Layout
+### Espaçamento & Layout
 
 - **Border Radius**: 8px padrão
 - **Spacing**: Tailwind scale (0-96)
 - **Breakpoints**: `sm` → `2xl` (Tailwind padrão)
 - **Grid**: 12 colunas responsivo
 
-## 4. Padrões de Componentes
+## 7. Padrões de Componentes
 
 ### Estrutura de Arquivos
 
@@ -102,39 +129,85 @@ variant: 'primary' | 'secondary' | 'accent' | 'ghost' | 'destructive';
 size: 'sm' | 'md' | 'lg' | 'xl';
 ```
 
-## 5. Storybook & Testes
+## 8. Tecnologias Avançadas & Padrões Mundiais
 
-### 📚 Storybook
+### Stack Tecnológica de Ponta (SEMPRE usar as mais atuais)
 
-```bash
-# Desenvolvimento
-pnpm run storybook         # http://localhost:6006
+**Frontend Cutting-Edge**:
 
-# Build para produção
-pnpm run build-storybook
-```
+- **Next.js 15.4** (App Router, Server Components, Streaming)
+- **React 19** (Concurrent Features, Suspense, Error Boundaries)
+- **TypeScript 5.9.2** (Strict mode, Latest features)
+- **Tailwind CSS 4.1.11** (Oxide engine, Container queries)
 
-**Todos os componentes** devem ter:
+**Performance & Core Web Vitals**:
 
-- ✅ Story principal com controles
-- ✅ Variantes documentadas
-- ✅ Documentação MDX
-- ✅ Testes de acessibilidade
+- **Bundle Analyzer** - Otimização automática
+- **Image Optimization** - WebP/AVIF com fallbacks
+- **Font Optimization** - Google Fonts com font-display: swap
+- **Lazy Loading** - React.lazy + Suspense
+- **Code Splitting** - Route-based + Component-based
 
-### 🧪 Testes
+**E-commerce Standards (Preparação para Fases 2-4)**:
 
-```bash
-# Unit tests (Vitest)
-pnpm test
-pnpm test:watch
+- **Stripe** - Pagamentos internacionais
+- **PayPal** - Checkout alternativo
+- **Headless CMS** - Strapi ou Contentful
+- **Analytics** - Google Analytics 4 + Hotjar
+- **SEO** - Schema.org + Open Graph + Twitter Cards
+- **PWA** - Service Workers + Manifest
 
-# E2E tests (Playwright)
-pnpm test:e2e
-```
+### Padrões Reconhecidos Mundialmente
 
-## 6. Guardrails
+**Design System Standards**:
 
-### 🚨 Regras Obrigatórias
+- **Atomic Design** - Átomos → Moléculas → Organismos
+- **Design Tokens** - Consistent spacing, colors, typography
+- **Component Documentation** - Storybook com MDX
+- **Accessibility** - WCAG 2.2 AA compliance
+
+**Development Standards**:
+
+- **Clean Architecture** - Separation of concerns
+- **SOLID Principles** - Object-oriented design
+- **Test-Driven Development** - Unit + Integration + E2E
+- **Continuous Integration** - GitHub Actions + Quality gates
+
+**E-commerce Best Practices**:
+
+- **Jamstack Architecture** - Static + Dynamic hybrid
+- **Headless Commerce** - API-first approach
+- **Microservices Ready** - Modular, scalable architecture
+- **Multi-tenant Support** - B2B marketplace preparation
+
+### Performance Targets (OBRIGATÓRIOS)
+
+- **Lighthouse Score**: > 95 em todas as métricas
+- **First Contentful Paint**: < 1.5s
+- **Largest Contentful Paint**: < 2.5s
+- **Cumulative Layout Shift**: < 0.1
+- **First Input Delay**: < 100ms
+- **Bundle Size**: < 500KB inicial
+
+### Segurança & Compliance
+
+- **HTTPS Everywhere** - SSL/TLS 1.3
+- **CSP Headers** - Content Security Policy
+- **GDPR Compliance** - Data protection ready
+- **ISO 27001 Ready** - Security management
+- **PCI DSS Ready** - Payment security (futuro e-commerce)
+
+### Progressive Web App Features
+
+- **Offline Support** - Service Worker caching
+- **Push Notifications** - Customer engagement
+- **App-like Experience** - Native feel
+- **Install Prompt** - Add to home screen
+- **Background Sync** - Offline form submissions
+
+## 9. Guardrails
+
+### Regras Obrigatórias
 
 1. **❌ PROIBIDO** criar cores/tipografias fora dos tokens
    - Sempre consultar antes de adicionar novos tokens
@@ -156,7 +229,7 @@ pnpm test:e2e
    - Lighthouse Score > 90
    - Core Web Vitals green
 
-### ✅ Checklist "Antes de Commitar"
+### Checklist "Antes de Commitar"
 
 ```bash
 # 1. Lint & Format
@@ -179,9 +252,9 @@ pnpm run build-storybook   # Storybook build
 pnpm run storybook         # Review components
 ```
 
-## 7. Fluxo Multi-IA
+## 10. Fluxo Multi-IA
 
-### 🤖 Agentes Ativos
+### Agentes Ativos
 
 | Agente             | Responsabilidade                | Acesso      |
 | ------------------ | ------------------------------- | ----------- |
@@ -190,7 +263,7 @@ pnpm run storybook         # Review components
 | **OpenAI Codex**   | Scripts CLI, automação          | Read/Write  |
 | **ChatGPT**        | Coordenação, planejamento       | Coordinator |
 
-### 🔄 Processo de Trabalho
+### Processo de Trabalho
 
 1. **ChatGPT** coordena e define tarefas
 2. **v0** gera componentes UI seguindo design system
@@ -198,7 +271,7 @@ pnpm run storybook         # Review components
 4. **Codex** automatiza tarefas repetitivas
 5. **Todos** seguem guardrails e fazem checklist
 
-### 📋 Comunicação Entre Agentes
+### Comunicação Entre Agentes
 
 - **Este arquivo (`agents.md`)** é a fonte única da verdade
 - Sempre referenciar tokens e padrões definidos aqui
@@ -208,9 +281,36 @@ pnpm run storybook         # Review components
   - Processos de desenvolvimento
   - Guardrails ou regras
 
-## 8. Roadmap
+## 11. Sistema de Versionamento & Tracking de Mudanças
 
-### 🎯 Fase 1: MVP (Atual - Concluída)
+### Change Log Protocol
+
+**OBRIGATÓRIO**: Toda IA deve registrar mudanças significativas aqui
+
+#### Versão 1.1.0 - Agosto 2025
+
+**GitHub Copilot**:
+
+- ✅ Adicionado business-context.md com informações completas da empresa
+- ✅ Integradas informações reais do cliente (fundação 2014, Porto Alegre)
+- ✅ Catalogados 6 produtos principais da LD Andaimes
+- ✅ Definida estratégia de crescimento em 4 fases (Landing → Portal → E-commerce → Marketplace)
+- ✅ Configuradas fontes tipográficas no layout.tsx (Inter, Jost, JetBrains Mono)
+- ✅ Criado v0-prompt.md com instruções específicas para Vercel v0
+- ✅ Corrigidos erros de lint em todos os arquivos Markdown
+
+#### Versão 1.0.0 - Agosto 2025
+
+**GitHub Copilot**:
+
+- ✅ Setup inicial Next.js 15.4 + React 19 + TypeScript 5.9.2
+- ✅ Configuração shadcn/ui + Tailwind CSS 4.1.11
+- ✅ Design system com tokens HSL específicos
+- ✅ Estrutura de testes (Vitest + Playwright)
+
+## 12. Roadmap
+
+### Fase 1: MVP (Atual - Concluída)
 
 - [x] Design system base
 - [x] Componentes shadcn/ui
@@ -218,28 +318,28 @@ pnpm run storybook         # Review components
 - [x] Storybook configurado
 - [x] CI/CD pipeline
 
-### 🌙 Fase 2: Dark Mode & Refinamentos
+### Fase 2: Dark Mode & Refinamentos
 
 - [ ] Tokens dark mode
 - [ ] Componentes com suporte a tema
 - [ ] Animações e micro-interações
 - [ ] Otimizações de performance
 
-### 📊 Fase 3: CMS & Conteúdo
+### Fase 3: CMS & Conteúdo
 
 - [ ] Headless CMS integration
 - [ ] Blog/artigos técnicos
 - [ ] SEO otimizado
 - [ ] Analytics dashboard
 
-### 🛒 Fase 4: E-commerce & B2B
+### Fase 4: E-commerce & B2B
 
 - [ ] Sistema de cotações
 - [ ] Catálogo de produtos
 - [ ] Gestão de pedidos
 - [ ] Dashboard administrativo
 
-## 📚 Scripts Úteis
+## 13. Scripts Úteis
 
 ```bash
 # Desenvolvimento
@@ -270,7 +370,7 @@ pnpm build-storybook      # Build for production
 
 ---
 
-## 🔄 Mantenha Este Arquivo Atualizado
+## Mantenha Este Arquivo Atualizado
 
 **Importante**: Sempre que alterar tokens, stack ou processos:
 
