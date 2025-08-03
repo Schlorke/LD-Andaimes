@@ -1,14 +1,28 @@
-'use client';
+"use client"
 
-import { ReactLenis } from '@studio-freight/react-lenis';
-import type { ReactNode } from 'react';
+import { ReactLenis } from "lenis/react"
+import type { ReactNode } from "react"
 
-function LenisProvider({ children }: { children: ReactNode }) {
-  return (
-    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothTouch: true }}>
-      {children}
-    </ReactLenis>
-  );
+interface LenisProviderProps {
+  children: ReactNode
 }
 
-export default LenisProvider;
+export default function LenisProvider({ children }: LenisProviderProps) {
+  return (
+    <ReactLenis
+      root
+      options={{
+        lerp: 0.1,
+        duration: 1.2,
+        orientation: "vertical",
+        gestureOrientation: "vertical",
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      }}
+    >
+      {children}
+    </ReactLenis>
+  )
+}
