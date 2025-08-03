@@ -26,7 +26,7 @@ pnpm build-storybook
 
 ### Organização Atual
 
-```
+```text
 src/stories/
 ├── Button.stories.tsx         # Componente Button com 5 variantes
 ├── Hero.stories.tsx          # Componente Hero com múltiplas configurações

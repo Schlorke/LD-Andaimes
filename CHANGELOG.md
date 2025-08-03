@@ -5,6 +5,20 @@ Todas as mudanças notáveis deste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.2.1] - 2025-01-03
+
+### 🔧 Correções de Deploy
+
+- **Vercel deploy fix** - Removidos overrides do pnpm que causavam conflito no lockfile
+- **TypeScript downgrade** - Ajustado para `5.8.3` para compatibilidade com ESLint
+- **Node.js version** - Especificado Node 18 via `.nvmrc`
+- **Vercel config** - Adicionado `vercel.json` com comandos de build customizados
+
+### 📁 Arquivos Adicionados
+
+- `.nvmrc` - Especifica versão do Node.js para desenvolvimento
+- `vercel.json` - Configuração específica para deploy na Vercel
+
 ## [0.2.0] - 2025-01-03
 
 ### 🎉 Adicionado
@@ -25,6 +39,7 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 - **@types/node**: `22.17.0` → `24.1.0`
 - **tailwind-merge**: `2.6.0` → `3.3.1` (major update)
 - **lucide-react**: `0.454.0` → `0.536.0`
+- **TypeScript**: `5.8.3` → `5.9.2` (resolução de peer dependencies)
 
 ### 🛠️ Melhorias
 
@@ -39,6 +54,8 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 - **PropFilter** - Configurado filtro TypeScript para exclusão automática de props
 - **Controls** - Desabilitados controles para propriedades que são elementos React
 - **Documentation** - Descrições detalhadas para todos os componentes e stories
+- **Vercel Deploy** - Resolvidos problemas de lockfile e peer dependencies para deploy na Vercel
+- **Node.js version** - Especificada versão via .nvmrc para compatibilidade
 
 ### 📚 Documentação
 

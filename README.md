@@ -93,7 +93,7 @@ O projeto segue as melhores práticas de desenvolvimento orientado a componentes
 
 ### Estrutura de Componentes
 
-```
+```text
 src/
 ├── components/ui/     # Componentes base (shadcn/ui)
 ├── stories/          # Stories do Storybook

@@ -119,7 +119,7 @@ Container para conteúdo estruturado.
 
 ## 🧩 Componentes Implementados
 
-### Button
+### Button Component
 
 Sistema robusto de botões com 5 variantes principais:
 
@@ -144,7 +144,7 @@ Sistema robusto de botões com 5 variantes principais:
 </Button>
 ```
 
-### Hero
+### Hero Component
 
 Componente para seções principais com CTA integrado:
 
@@ -165,7 +165,7 @@ Componente para seções principais com CTA integrado:
 - `secondaryAction` - Botão secundário (React element)
 - `backgroundImage` - URL da imagem de fundo
 
-### Card
+### Card Component
 
 Container flexível para conteúdo agrupado.
 

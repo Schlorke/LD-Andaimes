@@ -6,8 +6,8 @@
 
 - **Next.js**: `15.4.5` - Framework React com App Router
 - **React**: `19.x` - Biblioteca principal para UI
-- **TypeScript**: `5.9.x` - Linguagem com tipagem estática
-- **Node.js**: `18+` - Runtime JavaScript (requisito mínimo)
+- **TypeScript**: `5.9.2` - Linguagem com tipagem estática
+- **Node.js**: `18+` - Runtime JavaScript (especificado via .nvmrc)
 
 ### Styling & UI
 
@@ -79,12 +79,16 @@
 
 ### Package Manager
 
-- **pnpm**: `9+` - Gerenciador de pacotes recomendado
-- **Workspace**: Configurado via `pnpm-workspace.yaml`
+- **pnpm**: `10.x` - Gerenciador de pacotes
+- **Lockfile**: Sincronizado para compatibilidade com Vercel
+- **Build config**: Via `vercel.json` para deploy customizado
 
 ### Overrides de Dependências
 
+**Removidos para compatibilidade com Vercel:**
+
 ```json
+// Anteriormente causavam conflito no lockfile
 {
   "pnpm": {
     "overrides": {
@@ -94,6 +98,13 @@
   }
 }
 ```
+
+### Deploy & CI/CD
+
+- **Vercel**: Deploy automático via GitHub
+- **Node.js**: `18.x` (especificado via `.nvmrc`)
+- **Build command**: `pnpm build`
+- **Install command**: `pnpm install --no-frozen-lockfile`
 
 ### Compatibilidade
 

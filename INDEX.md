@@ -6,7 +6,7 @@ Guia completo para navegar pela documentação do projeto LD Andaimes.
 
 ### [README.md](./README.md)
 
-**Visão geral do projeto e setup inicial**
+#### Visão geral do projeto e setup inicial
 
 - ✨ Visão geral do projeto
 - 🚀 Stack tecnológica atualizada
@@ -16,7 +16,7 @@ Guia completo para navegar pela documentação do projeto LD Andaimes.
 
 ### [CHANGELOG.md](./CHANGELOG.md)
 
-**Histórico de mudanças e versões**
+#### Histórico de mudanças e versões
 
 - 🎉 Funcionalidades adicionadas
 - ⬆️ Atualizações de dependências
@@ -27,7 +27,7 @@ Guia completo para navegar pela documentação do projeto LD Andaimes.
 
 ### [design-system.md](./design-system.md)
 
-**Sistema de design e fundações visuais**
+#### Sistema de design e fundações visuais
 
 - 🎨 Design tokens (cores, tipografia, espaçamento)
 - 🧩 Componentes implementados
@@ -36,7 +36,7 @@ Guia completo para navegar pela documentação do projeto LD Andaimes.
 
 ### [STORYBOOK.md](./STORYBOOK.md)
 
-**Guia completo do Storybook**
+#### Guia completo do Storybook
 
 - 🚀 Como executar e acessar
 - 📚 Estrutura das stories
@@ -50,7 +50,7 @@ Guia completo para navegar pela documentação do projeto LD Andaimes.
 
 ### [TECH-STACK.md](./TECH-STACK.md)
 
-**Tecnologias, dependências e versões**
+#### Tecnologias, dependências e versões
 
 - 📦 Stack principal completa
 - 🛠️ Ferramentas de desenvolvimento
@@ -61,7 +61,7 @@ Guia completo para navegar pela documentação do projeto LD Andaimes.
 
 ## 🗂️ Estrutura de Arquivos
 
-```
+```text
 LD-Andaimes/
 ├── 📄 Documentação
 │   ├── README.md           # Visão geral e setup
