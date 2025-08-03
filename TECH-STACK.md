@@ -112,7 +112,29 @@
 - **pnpm**: `9.x` ou superior
 - **Navegadores modernos**: Chrome 90+, Firefox 88+, Safari 14+
 
-## 📈 Atualizações Recentes (Janeiro 2025)
+## 📈 Atualizações Recentes (Agosto 2025)
+
+### Arquitetura Unificada
+
+- **Estrutura padronizada**: Migração completa para `src/` directory
+- **Conflitos resolvidos**: Eliminação de duplicações entre `app/` e `src/app/`
+- **TypeScript paths**: Simplificação de `@/*` para apontar apenas para `src/*`
+- **Deploy otimizado**: Configuração limpa para Vercel sem ambiguidades
+
+### Correções de Deploy
+
+- **Node.js imports**: Substituição de `node:path` por imports padrão
+- **Chart component**: Implementação completa com tipagem TypeScript
+- **CSS consolidado**: Tailwind v4 unificado em `src/app/globals.css`
+- **Markdown linting**: Configuração customizada para documentação
+
+### Melhorias de Performance
+
+- **Bundle otimizado**: Remoção de arquivos duplicados
+- **Import resolution**: Paths únicos sem ambiguidade
+- **Build consistency**: Estrutura uniforme entre local e Vercel
+
+## 📈 Atualizações Anteriores (Janeiro 2025)
 
 ### Major Updates
 

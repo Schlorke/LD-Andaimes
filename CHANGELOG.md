@@ -5,6 +5,43 @@ Todas as mudanças notáveis deste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.3.0] - 2025-08-03
+
+### 🏗️ Arquitetura & Estrutura
+
+- **Estrutura unificada** - Padronizada estrutura em `src/` removendo duplicações
+- **Conflitos resolvidos** - Eliminadas pastas duplicadas (`app/`, `components/`, `lib/`, `hooks/`, `styles/`)
+- **TypeScript paths** - Configuração de imports simplificada para `@/*` → `src/*` apenas
+- **Deploy otimizado** - Estrutura limpa para Vercel deployment sem conflitos
+
+### 🔧 Correções Críticas
+
+- **Imports limpos** - Todos os imports `@/` agora resolvem univocamente para `src/`
+- **CSS unificado** - Mantido apenas `src/app/globals.css` com Tailwind v4
+- **Componentes consolidados** - Chart component implementado corretamente
+- **Node.js imports** - Corrigidas importações `node:path` para compatibilidade Vercel
+
+### 🧩 Componentes
+
+- **Chart component** - Implementação completa com tipagem TypeScript
+- **Hero component** - Variantes: default, gradient, image, minimal
+- **Button variants** - Primary, secondary, accent, ghost, destructive
+- **Card layouts** - Default, elevated, outlined
+
+### 📁 Arquivos Removidos
+
+- `app/` (raiz) - Removida estrutura conflitante
+- `components/` (raiz) - Consolidado em `src/components/`
+- `lib/` (raiz) - Consolidado em `src/lib/`
+- `hooks/` (raiz) - Removido (não utilizado)
+- `styles/` (raiz) - CSS movido para `src/app/`
+
+### ⚙️ Configurações
+
+- **ESLint** - Configuração flat format com Storybook integration
+- **TypeScript paths** - Simplificados para evitar ambiguidade
+- **Markdown linting** - Configuração personalizada `.markdownlint.json`
+
 ## [0.2.1] - 2025-01-03
 
 ### 🔧 Correções de Deploy

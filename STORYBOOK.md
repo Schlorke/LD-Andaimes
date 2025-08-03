@@ -22,6 +22,34 @@ pnpm build-storybook
 - **Desenvolvimento**: <http://localhost:6006>
 - **Build estático**: `storybook-static/index.html`
 
+## 🏗️ Estrutura do Projeto
+
+### Arquitetura Unificada
+
+O projeto agora utiliza uma estrutura unificada em `src/` que elimina conflitos e duplicações:
+
+```text
+src/
+├── app/                   # Next.js App Router
+│   ├── globals.css        # Estilos Tailwind v4
+│   ├── layout.tsx         # Layout principal
+│   └── page.tsx           # Página inicial
+├── components/ui/         # Componentes shadcn/ui
+│   ├── button.tsx         # 5 variantes
+│   ├── hero.tsx           # 4 variantes
+│   ├── card.tsx           # 3 variantes
+│   └── badge.tsx          # Tags e badges
+├── lib/
+│   └── utils.ts           # Utilitários (cn, twMerge)
+└── stories/               # Stories do Storybook
+    ├── Button.stories.tsx
+    ├── Hero.stories.tsx
+    ├── LandingPage.stories.tsx
+    └── Configure.mdx
+```
+
+**Imports**: Todos os componentes são importados via `@/components/ui/` que resolve para `src/components/ui/`.
+
 ## 📚 Structure das Stories
 
 ### Organização Atual

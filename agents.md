@@ -104,14 +104,22 @@
 ### Estrutura de Arquivos
 
 ```text
-components/
-├── ui/                    # shadcn/ui components
-│   ├── button.tsx
-│   ├── card.tsx
-│   └── ...
-└── custom/               # Componentes específicos LD
-    ├── hero-section.tsx
-    └── ...
+src/
+├── app/                   # Next.js App Router
+│   ├── globals.css        # Estilos Tailwind v4
+│   ├── layout.tsx         # Layout principal
+│   └── page.tsx           # Página inicial
+├── components/ui/         # shadcn/ui components
+│   ├── button.tsx         # Botões com variantes
+│   ├── card.tsx           # Cards flexíveis  
+│   ├── hero.tsx           # Seções hero
+│   └── badge.tsx          # Badges e tags
+├── lib/
+│   └── utils.ts           # Utilitários (cn, twMerge)
+└── stories/               # Stories Storybook
+    ├── Button.stories.tsx
+    ├── Hero.stories.tsx
+    └── LandingPage.stories.tsx
 ```
 
 ### Convenções de Nomenclatura

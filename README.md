@@ -95,9 +95,22 @@ O projeto segue as melhores práticas de desenvolvimento orientado a componentes
 
 ```text
 src/
-├── components/ui/     # Componentes base (shadcn/ui)
-├── stories/          # Stories do Storybook
-└── lib/utils.ts      # Utilitários (cn, twMerge)
+├── app/
+│   ├── globals.css        # Estilos globais Tailwind v4
+│   ├── layout.tsx         # Layout principal Next.js
+│   └── page.tsx           # Página inicial
+├── components/ui/         # Componentes base (shadcn/ui)
+│   ├── button.tsx         # Botões com 5 variantes
+│   ├── card.tsx           # Cards flexíveis
+│   ├── hero.tsx           # Seções hero
+│   └── badge.tsx          # Badges e tags
+├── lib/
+│   └── utils.ts           # Utilitários (cn, twMerge)
+└── stories/               # Stories do Storybook
+    ├── Button.stories.tsx
+    ├── Hero.stories.tsx
+    ├── LandingPage.stories.tsx
+    └── Configure.mdx
 ```
 
 ## 📑 Roteiro Atualizado
@@ -113,6 +126,9 @@ src/
 - [x] Landing page MVP funcional
 - [x] Documentação de componentes
 - [x] Atualizações de dependências (Janeiro 2025)
+- [x] **Arquitetura unificada em `src/`** (Agosto 2025)
+- [x] **Resolução de conflitos de imports** (Agosto 2025)
+- [x] **Deploy Vercel otimizado** (Agosto 2025)
 
 ### 🚧 Em Progresso
 

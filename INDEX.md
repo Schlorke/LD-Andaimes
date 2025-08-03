@@ -71,10 +71,11 @@ LD-Andaimes/
 │   ├── TECH-STACK.md      # Tecnologias e dependências
 │   └── INDEX.md           # Este arquivo
 │
-├── 🎨 Componentes & Stories
-│   ├── src/components/ui/  # Componentes base
-│   ├── src/stories/       # Stories do Storybook
-│   └── .storybook/        # Configuração do Storybook
+├── 🎨 Componentes & Stories (src/)
+│   ├── app/               # App Next.js com layout e CSS
+│   ├── components/ui/     # Componentes base (shadcn/ui)
+│   ├── lib/               # Utilitários (utils.ts)
+│   └── stories/           # Stories do Storybook
 │
 ├── ⚙️ Configuração
 │   ├── package.json       # Dependências e scripts
@@ -83,10 +84,15 @@ LD-Andaimes/
 │   ├── next.config.*      # Configuração Next.js
 │   └── eslint.config.*    # Configuração ESLint
 │
-└── 🧪 Testes & Qualidade
-    ├── vitest.config.ts   # Configuração de testes
-    ├── playwright.config.* # Configuração E2E
-    └── .prettierrc        # Configuração Prettier
+├── 🧪 Testes & Qualidade
+│   ├── vitest.config.ts   # Configuração de testes
+│   ├── .markdownlint.json # Linting de Markdown
+│   └── .prettierrc        # Configuração Prettier
+│
+└── 🏗️ Build & Deploy
+    ├── .nvmrc             # Versão Node.js
+    ├── vercel.json        # Config Vercel
+    └── .storybook/        # Configuração Storybook
 ```
 
 ## 🚀 Quick Start
