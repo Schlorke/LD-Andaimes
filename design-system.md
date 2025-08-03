@@ -313,3 +313,4 @@ Mobile-first com breakpoints Tailwind:
 - TypeScript strict mode
 - 90%+ test coverage
 - Storybook stories para todos os componentes
+```
