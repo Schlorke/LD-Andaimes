@@ -1,6 +1,3 @@
-# LD-Andaimes
-Site &amp; plataforma LD Andaimes • Next 15 + Tailwind 4 + TS 5.9
-
 <h1 align="center">LD Andaimes 🚧</h1>
 <p align="center">
   Site & Plataforma • Next 15 · Tailwind 4 · TypeScript 5.9
