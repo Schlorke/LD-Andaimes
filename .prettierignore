@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+storybook-static/
+
+# Generated files
+next-env.d.ts
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+
+# Environment files
+.env*
+
+# Lock files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Cache
+.cache
+.turbo
+
+# OS
+.DS_Store
+Thumbs.db
