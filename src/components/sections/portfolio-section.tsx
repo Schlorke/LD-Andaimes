@@ -117,8 +117,8 @@ export function PortfolioSection() {
             <ScrollReveal key={index} delay={index * 0.2}>
               <motion.div
                 className="group relative h-64 cursor-pointer overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => openModal(index)}
               >
                 <Image
@@ -150,51 +150,72 @@ export function PortfolioSection() {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm"
             onClick={closeModal}
           >
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.8, opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="relative w-full h-full max-w-[95vw] max-h-[95vh] mx-auto flex items-center justify-center"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <Image
-            src={projects[selectedImage].src}
-            alt={projects[selectedImage].alt}
-            fill
-            className="object-contain rounded-lg"
-            sizes="95vw"
-          />              {/* Botão Fechar */}
-              <Button
-                variant="ghost"
-                size="sm"
-                className="absolute top-4 right-4 bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300 h-10 w-10 p-0"
-                onClick={closeModal}
-              >
-                <X className="h-5 w-5 opacity-90" />
-              </Button>
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full h-full max-w-[95vw] max-h-[95vh] mx-auto flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={projects[selectedImage].src}
+                alt={projects[selectedImage].alt}
+                fill
+                className="object-contain rounded-lg"
+                sizes="95vw"
+              />
               
-              {/* Navegação */}
-              <Button
-                variant="ghost"
-                size="sm"
-                className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300 h-12 w-12 p-0"
-                onClick={prevImage}
+              {/* Botão Fechar */}
+              <motion.div
+                className="absolute top-4 right-4 z-10"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <ChevronLeft className="h-6 w-6 opacity-90" />
-              </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300 h-10 w-10 p-0"
+                  onClick={closeModal}
+                >
+                  <X className="h-5 w-5 opacity-90" />
+                </Button>
+              </motion.div>
               
-              <Button
-                variant="ghost"
-                size="sm"
-                className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300 h-12 w-12 p-0"
-                onClick={nextImage}
+              {/* Navegação Anterior */}
+              <motion.div
+                className="absolute top-1/2 left-4 -translate-y-1/2 z-10"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <ChevronRight className="h-6 w-6 opacity-90" />
-              </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300 h-12 w-12 p-0"
+                  onClick={prevImage}
+                >
+                  <ChevronLeft className="h-6 w-6 opacity-90" />
+                </Button>
+              </motion.div>
+              
+              {/* Navegação Próxima */}
+              <motion.div
+                className="absolute top-1/2 right-4 -translate-y-1/2 z-10"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300 h-12 w-12 p-0"
+                  onClick={nextImage}
+                >
+                  <ChevronRight className="h-6 w-6 opacity-90" />
+                </Button>
+              </motion.div>
               
               {/* Categoria */}
-              <div className="absolute bottom-4 left-4">
+              <div className="absolute bottom-4 left-4 z-10">
                 <Badge className="bg-gradient-to-r from-orange-500 to-orange-600 px-3 py-1 text-sm font-semibold text-white shadow-lg">
                   {projects[selectedImage].category}
                 </Badge>
