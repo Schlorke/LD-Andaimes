@@ -105,7 +105,7 @@ export default function HomePage() {
 
       {/* Stats Section */}
       <ScrollReveal>
-        <section className="relative py-24">
+        <section className="relative py-16">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat, index) => {
@@ -147,7 +147,7 @@ export default function HomePage() {
 
       {/* About Section */}
       <ScrollReveal>
-        <section id="sobre" className="relative overflow-hidden py-32">
+        <section id="sobre" className="relative overflow-hidden py-16">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="grid grid-cols-1 items-center gap-20 lg:grid-cols-2">
               <ScrollReveal delay={0.3}>
@@ -202,7 +202,7 @@ export default function HomePage() {
 
       {/* Testimonials Section */}
       <ScrollReveal>
-        <section className="relative py-32">
+        <section className="relative py-16">
           <div className="container mx-auto max-w-7xl px-4">
             <div className="mb-16 text-center">
               <ScrollReveal delay={0.2}>
@@ -273,7 +273,7 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <ScrollReveal>
-        <section className="py-32">
+        <section className="py-16">
           <div className="container mx-auto max-w-7xl px-4">
             <motion.div
               className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900 p-16 text-center text-white shadow-2xl"

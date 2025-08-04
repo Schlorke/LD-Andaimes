@@ -36,7 +36,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       variant="ghost"
       size="sm"
       className={cn(
-        'h-9 w-9 px-0 text-gray-900 hover:text-orange-600 dark:text-white dark:hover:text-orange-400',
+        'h-9 w-9 px-0 hover:bg-orange-500 hover:text-yellow-400 transition-colors duration-200',
         className
       )}
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}

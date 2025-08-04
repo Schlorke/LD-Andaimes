@@ -53,7 +53,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <motion.div
         whileTap={{ scale: 0.95 }}
         className="inline-flex"
-        whileHover={{ scale: 1.03, y: -3 }}
+        whileHover={{ scale: 1.01, y: -2 }}
         transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
       >
         <Comp

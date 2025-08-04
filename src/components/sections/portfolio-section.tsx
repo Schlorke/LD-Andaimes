@@ -72,9 +72,10 @@ export function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="relative bg-gray-50 py-32 dark:bg-gray-900"
+      className="relative py-16"
     >
-      <div className="container mx-auto max-w-7xl px-4">
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900"></div>
+      <div className="container mx-auto max-w-7xl px-4 relative z-10">
         <div className="mb-16 text-center">
           <ScrollReveal>
             <Badge
@@ -85,12 +86,12 @@ export function PortfolioSection() {
             </Badge>
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
-            <h2 className="font-display mb-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h2 className="font-display mb-6 text-5xl font-bold tracking-tight text-white">
               Projetos Reais, Soluções Eficientes
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.6}>
-            <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-600 dark:text-gray-300">
+            <p className="mx-auto max-w-3xl text-xl leading-relaxed text-white/90">
               Confira alguns dos projetos onde a LD Andaimes garantiu segurança
               e eficiência.
             </p>
@@ -111,7 +112,10 @@ export function PortfolioSection() {
                   fill
                   className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={index < 3}
+                  onError={(e) => {
+                    console.error('Image failed to load:', project.src);
+                    e.currentTarget.src = '/placeholder.svg';
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent transition-all duration-500 group-hover:from-black/80" />
                 <div className="absolute bottom-6 left-6">

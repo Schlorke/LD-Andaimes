@@ -15,7 +15,7 @@ export function WhatsAppFloat({
   className,
   phone = '5551994647458',
 }: WhatsAppFloatProps) {
-  const [hasClicked, setHasClicked] = useState(true);
+  const [hasClicked, setHasClicked] = useState(false);
 
   useEffect(() => {
     const clicked = localStorage.getItem('whatsapp-clicked');
@@ -25,6 +25,7 @@ export function WhatsAppFloat({
   }, []);
 
   const handleClick = () => {
+    console.log('WhatsApp button clicked!');
     if (!hasClicked) {
       localStorage.setItem('whatsapp-clicked', 'true');
       setHasClicked(true);
@@ -34,6 +35,7 @@ export function WhatsAppFloat({
       'Olá! Gostaria de solicitar um orçamento para andaimes.'
     );
     const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
+    console.log('Opening WhatsApp URL:', whatsappUrl);
     window.open(whatsappUrl, '_blank');
   };
 

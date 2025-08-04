@@ -8,6 +8,7 @@
     "Contentful",
     "embla",
     "esnext",
+    "fachadeiro",
     "Fachadeiros",
     "fullscreen",
     "Hotjar",
@@ -18,12 +19,14 @@
     "nums",
     "nuxt",
     "Schlorke",
+    "servico",
     "shadcn",
     "sonner",
     "Supabase",
     "turbopack",
     "Turborepo",
     "vaul",
-    "Viewports"
+    "Viewports",
+    "whatsapp"
   ]
 }

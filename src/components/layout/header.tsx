@@ -45,37 +45,35 @@ export function Header({ className }: HeaderProps) {
   return (
     <header
       className={cn(
-        'shadow-card-3d fixed top-0 z-50 w-full backdrop-blur-md',
-        'bg-white/95 dark:bg-gray-900/95',
-        'transition-all duration-500 ease-out',
+        'fixed top-0 z-50 w-full border-b border-orange-100/50 backdrop-blur-md bg-white/95 shadow-lg',
         className
       )}
     >
-      <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
+      <div className="container mx-auto flex h-16 max-w-7xl items-center px-4 relative">
         {/* Logo */}
         <div>
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/logo.png"
-              alt="LD Andaimes"
-              width={180}
-              height={48}
-              className="h-12 w-auto"
+              alt="LD Andaimes Logo"
+              width={140}
+              height={40}
+              className="h-10 w-auto"
             />
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center space-x-10 md:flex">
+        {/* Desktop Navigation - Centralizada */}
+        <nav className="hidden absolute left-1/2 transform -translate-x-1/2 items-center space-x-8 md:flex">
           {navigation.map(item => (
             <div key={item.name}>
               <Link
                 href={item.href}
                 onClick={e => handleLinkClick(e, item.href)}
-                className="group relative transform text-base font-semibold text-gray-900 transition-all duration-300 hover:scale-105 hover:text-orange-600 dark:text-white dark:hover:text-orange-400"
+                className="group relative text-sm font-medium transition-all duration-300 hover:text-orange-600"
               >
                 {item.name}
-                <span className="absolute -bottom-2 left-0 h-0.5 w-0 bg-gradient-to-r from-orange-500 to-orange-600 shadow-sm transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-orange-500 to-orange-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </div>
           ))}
