@@ -12,37 +12,31 @@ const projects = [
     src: '/images/projeto-construcao-ampla.jpg',
     alt: 'Ampla estrutura de andaimes em grande obra de construção civil.',
     category: 'Construção Pesada',
-    span: 'col-span-2 row-span-2',
   },
   {
     src: '/images/projeto-restauracao-historica.jpg',
     alt: 'Andaimes na fachada de um prédio histórico em restauração.',
     category: 'Restauração',
-    span: 'col-span-1 row-span-2',
   },
   {
     src: '/images/projeto-residencial-moderno.jpg',
     alt: 'Andaimes em um edifício residencial moderno de múltiplos andares.',
     category: 'Residencial',
-    span: 'col-span-1 row-span-1',
   },
   {
     src: '/images/projeto-seguranca-total.jpg',
     alt: 'Edifício com andaimes e telas de proteção laranja.',
     category: 'Segurança',
-    span: 'col-span-1 row-span-1',
   },
   {
     src: '/images/projeto-manutencao-fachada.jpg',
     alt: 'Andaimes para manutenção da fachada de um prédio.',
     category: 'Manutenção',
-    span: 'col-span-1 row-span-2',
   },
   {
     src: '/images/projeto-reforma-predial.jpg',
     alt: 'Trabalhador em andaime durante reforma de fachada.',
     category: 'Reforma',
-    span: 'col-span-2 row-span-1',
   },
 ];
 
@@ -70,12 +64,9 @@ function ScrollReveal({
 
 export function PortfolioSection() {
   return (
-    <section
-      id="portfolio"
-      className="relative py-16"
-    >
+    <section id="portfolio" className="relative py-16">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900"></div>
-      <div className="container mx-auto max-w-7xl px-4 relative z-10">
+      <div className="relative z-10 container mx-auto max-w-7xl px-4">
         <div className="mb-16 text-center">
           <ScrollReveal>
             <Badge
@@ -98,11 +89,11 @@ export function PortfolioSection() {
           </ScrollReveal>
         </div>
 
-        <div className="grid min-h-[700px] grid-cols-1 grid-rows-3 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <ScrollReveal key={index} delay={index * 0.2}>
               <motion.div
-                className={`group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl ${project.span}`}
+                className="group relative h-64 cursor-pointer overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl"
                 whileHover={{ scale: 1.02, y: -5 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
               >
@@ -111,11 +102,7 @@ export function PortfolioSection() {
                   alt={project.alt}
                   fill
                   className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  onError={(e) => {
-                    console.error('Image failed to load:', project.src);
-                    e.currentTarget.src = '/placeholder.svg';
-                  }}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent transition-all duration-500 group-hover:from-black/80" />
                 <div className="absolute bottom-6 left-6">

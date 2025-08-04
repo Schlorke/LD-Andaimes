@@ -45,11 +45,11 @@ export function Header({ className }: HeaderProps) {
   return (
     <header
       className={cn(
-        'fixed top-0 z-50 w-full border-b border-orange-100/50 backdrop-blur-md bg-white/95 shadow-lg',
+        'fixed top-0 z-50 w-full border-b border-orange-100/50 bg-white/95 shadow-lg backdrop-blur-md',
         className
       )}
     >
-      <div className="container mx-auto flex h-16 max-w-7xl items-center px-4 relative">
+      <div className="relative container mx-auto flex h-16 max-w-7xl items-center px-4">
         {/* Logo */}
         <div>
           <Link href="/" className="flex items-center space-x-2">
@@ -59,12 +59,13 @@ export function Header({ className }: HeaderProps) {
               width={140}
               height={40}
               className="h-10 w-auto"
+              priority
             />
           </Link>
         </div>
 
         {/* Desktop Navigation - Centralizada */}
-        <nav className="hidden absolute left-1/2 transform -translate-x-1/2 items-center space-x-8 md:flex">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 transform items-center space-x-8 md:flex">
           {navigation.map(item => (
             <div key={item.name}>
               <Link
@@ -80,7 +81,7 @@ export function Header({ className }: HeaderProps) {
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden items-center space-x-4 md:flex">
+        <div className="ml-auto hidden items-center space-x-4 md:flex">
           <ThemeToggle />
           <div>
             <Button
