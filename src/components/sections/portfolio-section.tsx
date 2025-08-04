@@ -76,13 +76,13 @@ export function PortfolioSection() {
   };
 
   const nextImage = () => {
-    setSelectedImage(prev => 
+    setSelectedImage(prev =>
       prev !== null ? (prev + 1) % projects.length : 0
     );
   };
 
   const prevImage = () => {
-    setSelectedImage(prev => 
+    setSelectedImage(prev =>
       prev !== null ? (prev - 1 + projects.length) % projects.length : 0
     );
   };
@@ -100,12 +100,12 @@ export function PortfolioSection() {
             </Badge>
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
-            <h2 className="font-display mb-6 text-responsive-4xl font-bold tracking-tight text-white">
+            <h2 className="font-display text-responsive-4xl mb-6 font-bold tracking-tight text-white">
               Projetos Reais, Soluções Eficientes
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.6}>
-            <p className="mx-auto max-w-3xl text-responsive-lg leading-relaxed text-white/90">
+            <p className="text-responsive-lg mx-auto max-w-3xl leading-relaxed text-white/90">
               Confira alguns dos projetos onde a LD Andaimes garantiu segurança
               e eficiência.
             </p>
@@ -155,17 +155,17 @@ export function PortfolioSection() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative w-full h-full max-w-[95vw] max-h-[95vh] mx-auto flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
+              className="relative mx-auto flex h-full max-h-[95vh] w-full max-w-[95vw] items-center justify-center"
+              onClick={e => e.stopPropagation()}
             >
               <Image
                 src={projects[selectedImage].src}
                 alt={projects[selectedImage].alt}
                 fill
-                className="object-contain rounded-lg"
+                className="rounded-lg object-contain"
                 sizes="95vw"
               />
-              
+
               {/* Botão Fechar */}
               <motion.div
                 className="absolute top-4 right-4 z-10"
@@ -175,45 +175,45 @@ export function PortfolioSection() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300 h-10 w-10 p-0"
+                  className="h-10 w-10 border border-white/30 bg-white/20 p-0 text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/30"
                   onClick={closeModal}
                 >
                   <X className="h-5 w-5 opacity-90" />
                 </Button>
               </motion.div>
-              
+
               {/* Navegação Anterior */}
               <motion.div
-                className="absolute top-1/2 left-4 -translate-y-1/2 z-10"
+                className="absolute top-1/2 left-4 z-10 -translate-y-1/2"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300 h-12 w-12 p-0"
+                  className="h-12 w-12 border border-white/30 bg-white/20 p-0 text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/30"
                   onClick={prevImage}
                 >
                   <ChevronLeft className="h-6 w-6 opacity-90" />
                 </Button>
               </motion.div>
-              
+
               {/* Navegação Próxima */}
               <motion.div
-                className="absolute top-1/2 right-4 -translate-y-1/2 z-10"
+                className="absolute top-1/2 right-4 z-10 -translate-y-1/2"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300 h-12 w-12 p-0"
+                  className="h-12 w-12 border border-white/30 bg-white/20 p-0 text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/30"
                   onClick={nextImage}
                 >
                   <ChevronRight className="h-6 w-6 opacity-90" />
                 </Button>
               </motion.div>
-              
+
               {/* Categoria */}
               <div className="absolute bottom-4 left-4 z-10">
                 <Badge className="bg-gradient-to-r from-orange-500 to-orange-600 px-3 py-1 text-sm font-semibold text-white shadow-lg">

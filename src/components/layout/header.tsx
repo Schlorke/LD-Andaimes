@@ -106,7 +106,7 @@ export function Header({ className }: HeaderProps) {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="px-2 text-gray-900 hover:text-orange-600 dark:text-gray-100 dark:hover:text-orange-400"
+                  className="px-2 text-gray-700 transition-colors duration-300 hover:text-amber-400 dark:text-gray-900 dark:hover:text-amber-400"
                 >
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle menu</span>

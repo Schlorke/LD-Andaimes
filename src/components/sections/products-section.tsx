@@ -76,12 +76,12 @@ export function ProductsSection() {
             </Badge>
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
-            <h2 className="font-display mb-6 text-responsive-4xl font-bold tracking-tight text-gray-900">
+            <h2 className="font-display text-responsive-4xl mb-6 font-bold tracking-tight text-gray-900">
               Soluções completas para sua obra
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.6}>
-            <p className="mx-auto max-w-3xl text-responsive-lg leading-relaxed text-gray-600">
+            <p className="text-responsive-lg mx-auto max-w-3xl leading-relaxed text-gray-600">
               Equipamentos certificados e de alta qualidade para garantir a
               segurança e eficiência do seu projeto.
             </p>

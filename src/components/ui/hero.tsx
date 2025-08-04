@@ -12,8 +12,8 @@ const heroVariants = cva(
   {
     variants: {
       size: {
-        md: 'min-h-[100vh] pt-16',
-        lg: 'min-h-screen pt-16',
+        md: 'h-[70vh] pt-18', // 70% da viewport height - compacto para mobile
+        lg: 'h-[94vh] pt-18', // 80% da viewport height - perfeito para Full HD com ondulações
       },
     },
     defaultVariants: {
