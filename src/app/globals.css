@@ -87,6 +87,16 @@ html {
     font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Fallback para navegadores antigos */
+    background: linear-gradient(
+      135deg,
+      #f8f8f8 0%,
+      #f5f2f0 25%,
+      #f2ebe6 50%,
+      #f5f2f0 75%,
+      #f8f8f8 100%
+    );
+    /* Gradiente moderno com oklch */
     background: linear-gradient(
       135deg,
       oklch(0.98 0.005 120) 0%,
@@ -100,6 +110,16 @@ html {
   }
 
   body.dark {
+    /* Fallback para navegadores antigos */
+    background: linear-gradient(
+      135deg,
+      #1a1a1a 0%,
+      #1f1f1f 25%,
+      #242424 50%,
+      #1f1f1f 75%,
+      #1a1a1a 100%
+    );
+    /* Gradiente moderno com oklch */
     background: linear-gradient(
       135deg,
       oklch(0.08 0.01 260) 0%,
@@ -130,35 +150,35 @@ html {
   .text-responsive-xs {
     @apply text-xs sm:text-sm;
   }
-  
+
   .text-responsive-sm {
     @apply text-sm sm:text-base;
   }
-  
+
   .text-responsive-base {
     @apply text-sm sm:text-base md:text-lg;
   }
-  
+
   .text-responsive-lg {
     @apply text-base sm:text-lg md:text-xl;
   }
-  
+
   .text-responsive-xl {
     @apply text-lg sm:text-xl md:text-2xl;
   }
-  
+
   .text-responsive-2xl {
     @apply text-xl sm:text-2xl md:text-3xl;
   }
-  
+
   .text-responsive-3xl {
     @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
   }
-  
+
   .text-responsive-4xl {
     @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
   }
-  
+
   .text-responsive-5xl {
     @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
   }
@@ -219,6 +239,9 @@ html {
 
   /* Gradientes personalizados */
   .bg-gradient-primary {
+    /* Fallback para navegadores antigos */
+    background: linear-gradient(135deg, #e36a00 0%, #cc5500 100%);
+    /* Gradiente moderno com oklch */
     background: linear-gradient(
       135deg,
       oklch(0.58 0.15 25) 0%,
@@ -227,6 +250,9 @@ html {
   }
 
   .bg-gradient-accent {
+    /* Fallback para navegadores antigos */
+    background: linear-gradient(135deg, #f59e0b 0%, #e36a00 100%);
+    /* Gradiente moderno com oklch */
     background: linear-gradient(
       135deg,
       oklch(0.65 0.18 45) 0%,
@@ -235,6 +261,9 @@ html {
   }
 
   .bg-gradient-hero {
+    /* Fallback para navegadores antigos */
+    background: linear-gradient(135deg, #f8f8f8 0%, #f5f2f0 50%, #f2ebe6 100%);
+    /* Gradiente moderno com oklch */
     background: linear-gradient(
       135deg,
       oklch(0.98 0.005 120) 0%,
@@ -312,9 +341,16 @@ html {
 
 /* Smooth focus styles */
 :focus-visible {
-  outline: 2px solid oklch(0.58 0.15 25);
+  outline: 2px solid #e36a00; /* Fallback para navegadores antigos */
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Suporte moderno para oklch */
+@supports (color: oklch(0 0 0)) {
+  :focus-visible {
+    outline-color: oklch(0.58 0.15 25);
+  }
 }
 
 /* Scroll bar styling */
@@ -323,35 +359,17 @@ html {
 }
 
 ::-webkit-scrollbar-track {
+  background: #f5f5f5; /* Fallback */
   background: oklch(0.96 0.01 25);
 }
 
 ::-webkit-scrollbar-thumb {
+  background: #e36a00; /* Fallback */
   background: oklch(0.58 0.15 25);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: #cc5500; /* Fallback */
   background: oklch(0.52 0.15 25);
-}
-
-@layer base {
-  * {
-    border-color: hsl(var(--border));
-    outline-color: hsl(var(--ring) / 0.5);
-  }
-  body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
-  }
-}
-
-@layer utilities {
-  .line-clamp-3 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-  }
 }
