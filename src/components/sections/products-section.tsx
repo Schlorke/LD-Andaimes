@@ -76,12 +76,12 @@ export function ProductsSection() {
             </Badge>
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
-            <h2 className="font-display mb-6 text-5xl font-bold tracking-tight text-gray-900">
+            <h2 className="font-display mb-6 text-responsive-4xl font-bold tracking-tight text-gray-900">
               Soluções completas para sua obra
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.6}>
-            <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-600">
+            <p className="mx-auto max-w-3xl text-responsive-lg leading-relaxed text-gray-600">
               Equipamentos certificados e de alta qualidade para garantir a
               segurança e eficiência do seu projeto.
             </p>
@@ -94,7 +94,7 @@ export function ProductsSection() {
             return (
               <ScrollReveal key={product.id} delay={index * 0.3}>
                 <motion.div
-                  whileHover={{ scale: 1.03, y: -8 }}
+                  whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <Card className="group flex h-[520px] flex-col overflow-hidden border-0 bg-white/90 shadow-lg backdrop-blur-sm transition-all duration-500 hover:shadow-2xl">

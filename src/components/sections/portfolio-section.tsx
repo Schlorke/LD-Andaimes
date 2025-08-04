@@ -4,8 +4,10 @@ import type React from 'react';
 
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { Button } from '@/components/ui/button';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const projects = [
   {
@@ -63,6 +65,27 @@ function ScrollReveal({
 }
 
 export function PortfolioSection() {
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  const openModal = (index: number) => {
+    setSelectedImage(index);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
+  const nextImage = () => {
+    setSelectedImage(prev => 
+      prev !== null ? (prev + 1) % projects.length : 0
+    );
+  };
+
+  const prevImage = () => {
+    setSelectedImage(prev => 
+      prev !== null ? (prev - 1 + projects.length) % projects.length : 0
+    );
+  };
   return (
     <section id="portfolio" className="relative py-16">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900"></div>
@@ -77,12 +100,12 @@ export function PortfolioSection() {
             </Badge>
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
-            <h2 className="font-display mb-6 text-5xl font-bold tracking-tight text-white">
+            <h2 className="font-display mb-6 text-responsive-4xl font-bold tracking-tight text-white">
               Projetos Reais, Soluções Eficientes
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.6}>
-            <p className="mx-auto max-w-3xl text-xl leading-relaxed text-white/90">
+            <p className="mx-auto max-w-3xl text-responsive-lg leading-relaxed text-white/90">
               Confira alguns dos projetos onde a LD Andaimes garantiu segurança
               e eficiência.
             </p>
@@ -94,8 +117,9 @@ export function PortfolioSection() {
             <ScrollReveal key={index} delay={index * 0.2}>
               <motion.div
                 className="group relative h-64 cursor-pointer overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl"
-                whileHover={{ scale: 1.02, y: -5 }}
-                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+                onClick={() => openModal(index)}
               >
                 <Image
                   src={project.src}
@@ -110,34 +134,75 @@ export function PortfolioSection() {
                     {project.category}
                   </Badge>
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <div className="rounded-full bg-white/20 p-4 backdrop-blur-sm">
-                    <svg
-                      className="h-8 w-8 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                      />
-                    </svg>
-                  </div>
-                </div>
               </motion.div>
             </ScrollReveal>
           ))}
         </div>
       </div>
+
+      {/* Modal de Galeria */}
+      <AnimatePresence>
+        {selectedImage !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm"
+            onClick={closeModal}
+          >
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.8, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="relative w-full h-full max-w-[95vw] max-h-[95vh] mx-auto flex items-center justify-center"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <Image
+            src={projects[selectedImage].src}
+            alt={projects[selectedImage].alt}
+            fill
+            className="object-contain rounded-lg"
+            sizes="95vw"
+          />              {/* Botão Fechar */}
+              <Button
+                variant="ghost"
+                size="sm"
+                className="absolute top-4 right-4 bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300 h-10 w-10 p-0"
+                onClick={closeModal}
+              >
+                <X className="h-5 w-5 opacity-90" />
+              </Button>
+              
+              {/* Navegação */}
+              <Button
+                variant="ghost"
+                size="sm"
+                className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300 h-12 w-12 p-0"
+                onClick={prevImage}
+              >
+                <ChevronLeft className="h-6 w-6 opacity-90" />
+              </Button>
+              
+              <Button
+                variant="ghost"
+                size="sm"
+                className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-all duration-300 h-12 w-12 p-0"
+                onClick={nextImage}
+              >
+                <ChevronRight className="h-6 w-6 opacity-90" />
+              </Button>
+              
+              {/* Categoria */}
+              <div className="absolute bottom-4 left-4">
+                <Badge className="bg-gradient-to-r from-orange-500 to-orange-600 px-3 py-1 text-sm font-semibold text-white shadow-lg">
+                  {projects[selectedImage].category}
+                </Badge>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

@@ -119,10 +119,10 @@ export default function HomePage() {
                     >
                       <div className="rounded-2xl bg-white/90 p-8 shadow-lg backdrop-blur-sm transition-all duration-500 hover:shadow-2xl">
                         <Icon className="mx-auto mb-4 h-12 w-12 text-orange-500" />
-                        <div className="font-display mb-2 text-4xl font-bold text-gray-900">
+                        <div className="font-display mb-2 text-responsive-3xl font-bold text-gray-900">
                           {stat.value}
                         </div>
-                        <div className="text-lg font-semibold text-gray-600">
+                        <div className="text-responsive-base font-semibold text-gray-600">
                           {stat.label}
                         </div>
                       </div>
@@ -173,10 +173,10 @@ export default function HomePage() {
                   >
                     Sobre a LD Andaimes
                   </Badge>
-                  <h2 className="font-display mb-8 text-5xl font-bold tracking-tight text-gray-900">
+                  <h2 className="font-display mb-8 text-responsive-4xl font-bold tracking-tight text-gray-900">
                     Mais de uma década construindo com segurança
                   </h2>
-                  <div className="space-y-6 text-lg leading-relaxed text-gray-600">
+                  <div className="space-y-6 text-responsive-base leading-relaxed text-gray-600">
                     <p>
                       Fundada em 2014 em Porto Alegre, a LD Andaimes nasceu com
                       o compromisso de oferecer soluções completas em andaimes e
@@ -214,12 +214,12 @@ export default function HomePage() {
                 </Badge>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
-                <h2 className="font-display mb-6 text-5xl font-bold tracking-tight text-gray-900">
+                <h2 className="font-display mb-6 text-responsive-4xl font-bold tracking-tight text-gray-900">
                   Confiança que constrói
                 </h2>
               </ScrollReveal>
               <ScrollReveal delay={0.4}>
-                <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-600">
+                <p className="mx-auto max-w-3xl text-responsive-lg leading-relaxed text-gray-600">
                   O sucesso dos nossos parceiros é a nossa maior conquista.
                 </p>
               </ScrollReveal>
@@ -242,15 +242,15 @@ export default function HomePage() {
                             className="mr-6 rounded-full shadow-lg"
                           />
                           <div>
-                            <p className="text-xl font-semibold text-gray-900">
+                            <p className="text-responsive-lg font-semibold text-gray-900">
                               {testimonial.name}
                             </p>
-                            <p className="mt-1 text-sm text-gray-600">
+                            <p className="mt-1 text-responsive-sm text-gray-600">
                               {testimonial.role}
                             </p>
                           </div>
                         </div>
-                        <blockquote className="mb-6 text-lg leading-relaxed text-gray-700 italic">
+                        <blockquote className="mb-6 text-responsive-base leading-relaxed text-gray-700 italic">
                           &ldquo;{testimonial.quote}&rdquo;
                         </blockquote>
                         <div className="flex">
@@ -282,12 +282,12 @@ export default function HomePage() {
             >
               <div className="relative z-10">
                 <ScrollReveal>
-                  <h2 className="font-display mb-6 text-5xl font-bold tracking-tight">
+                  <h2 className="font-display mb-6 text-responsive-4xl font-bold tracking-tight">
                     Pronto para elevar seu projeto?
                   </h2>
                 </ScrollReveal>
                 <ScrollReveal delay={0.3}>
-                  <p className="mx-auto mb-12 max-w-3xl text-xl leading-relaxed opacity-90">
+                  <p className="mx-auto mb-12 max-w-3xl text-responsive-lg leading-relaxed opacity-90">
                     Nossa equipe técnica está pronta para encontrar a melhor
                     solução para sua obra.
                   </p>

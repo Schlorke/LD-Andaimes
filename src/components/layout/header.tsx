@@ -49,9 +49,9 @@ export function Header({ className }: HeaderProps) {
         className
       )}
     >
-      <div className="relative container mx-auto flex h-16 max-w-7xl items-center px-4">
+      <div className="relative container mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
         {/* Logo */}
-        <div>
+        <div className="flex-shrink-0">
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/logo.png"
@@ -81,7 +81,7 @@ export function Header({ className }: HeaderProps) {
         </nav>
 
         {/* Desktop Actions */}
-        <div className="ml-auto hidden items-center space-x-4 md:flex">
+        <div className="hidden items-center space-x-4 md:flex">
           <ThemeToggle />
           <div>
             <Button
@@ -106,7 +106,7 @@ export function Header({ className }: HeaderProps) {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="px-2 text-gray-900 hover:text-orange-600 dark:text-white dark:hover:text-orange-400"
+                  className="px-2 text-gray-900 hover:text-orange-600 dark:text-gray-100 dark:hover:text-orange-400"
                 >
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle menu</span>
